@@ -22,12 +22,135 @@ export const SITE = {
 } as const;
 
 export const NAV = [
-  { label: "Il Metodo", href: "#metodo" },
-  { label: "L'Eccellenza", href: "#eccellenza" },
   { label: "Risultati", href: "#risultati" },
+  { label: "Il Metodo", href: "#metodo" },
   { label: "Processo", href: "#processo" },
+  { label: "Soluzioni", href: "#soluzioni" },
+  { label: "Investimento", href: "#investimento" },
   { label: "Domande", href: "#faq" },
   { label: "Contatti", href: "#contatti" },
+] as const;
+
+export const PROBLEMS = [
+  "Soffri di calvizie o diradamento e cerchi una soluzione realmente efficace?",
+  "Hai fatto un trapianto ma il risultato non è quello che speravi?",
+  "Non ti riconosci più allo specchio e vorresti ritrovare un'immagine più sicura di te?",
+  "Hai provato farmaci, lozioni, patch o altre soluzioni… ma i risultati continuano a deluderti?",
+] as const;
+
+export const BENEFITS = [
+  {
+    icon: "shield" as const,
+    title: "Nessuna chirurgia né dolore",
+    body: "Ago sottile, pigmento bio-assorbibile, zero bisturi. Nessun ricovero, nessuna convalescenza.",
+  },
+  {
+    icon: "spark" as const,
+    title: "Risultati immediati e duraturi",
+    body: "Effetto rasato credibile già dalla prima seduta. Il risultato si costruisce in 2-3 sedute e si mantiene per anni.",
+  },
+  {
+    icon: "clock" as const,
+    title: "Nessun dispositivo da indossare",
+    body: "Niente parrucchino, niente fibre, niente protesi. Solo la tua testa, autentica.",
+  },
+  {
+    icon: "star" as const,
+    title: "Migliora l'autostima e il benessere",
+    body: "Un volto più simmetrico e proporzionato cambia il modo in cui ti presenti al mondo.",
+  },
+] as const;
+
+export const PROTOCOL_BADGES = [
+  { label: "Senza chirurgia", meta: "Non invasivo" },
+  { label: "Senza farmaci", meta: "Nessun principio attivo" },
+  { label: "Senza effetti collaterali", meta: "Pigmenti certificati" },
+] as const;
+
+export const STATS = [
+  { v: "8+", k: "Anni di Pratica" },
+  { v: "600+", k: "Clienti Seguiti" },
+  { v: "100%", k: "Risultati Garantiti" },
+  { v: "4.8 / 5", k: "Recensioni Verificate" },
+] as const;
+
+export const PROCESS = [
+  {
+    n: "01",
+    title: "Analisi",
+    body: "Una prima visita in studio per analizzare lo stato del cuoio capelluto, il colore naturale dei capelli e definire la corretta tonalità di pigmento da utilizzare.",
+    duration: "45 min",
+  },
+  {
+    n: "02",
+    title: "Progetto",
+    body: "Disegniamo l'attaccatura ideale: densità, distribuzione delle orme follicolari, ricostruzione del fronte. Ogni linea è studiata sul tuo viso.",
+    duration: "in studio",
+  },
+  {
+    n: "03",
+    title: "Seduta",
+    body: "Micro-depositi di pigmento bio-assorbibile nello strato superficiale della cute. Procedura non invasiva, indolore, senza sanguinamento. Risultato uniforme già dalla prima sessione.",
+    duration: "2 — 4 h",
+  },
+] as const;
+
+export const SOLUTIONS = [
+  {
+    src: "/images/case-1.png",
+    badge: "Calvizie avanzata",
+    title: "Effetto Rasato",
+    body: "Per simulare una rasatura uniforme, naturale e curata. Ideale nei casi di calvizie estesa: ricrea l'aspetto del bulbo con effetto realistico.",
+  },
+  {
+    src: "/images/case-2.png",
+    badge: "Diradamento",
+    title: "Effetto Densità",
+    body: "Per infoltire le zone meno piene, migliorare la copertura visiva e rendere la capigliatura più omogenea su tutta l'area.",
+  },
+  {
+    src: "/images/case-3.png",
+    badge: "Cicatrici",
+    title: "Copertura Cicatrici",
+    body: "Per mascherare cicatrici da trapianto FUT/FUE o traumi, uniformando il colore del cuoio capelluto al resto della testa.",
+  },
+  {
+    src: "/images/transformation-1.png",
+    badge: "Post-trapianto",
+    title: "Perfezionamento",
+    body: "Per uniformare la densità e migliorare l'aspetto complessivo dopo un autotrapianto. Più omogeneità e naturalezza.",
+  },
+] as const;
+
+export const PRICING_TIERS = [
+  {
+    n: "I",
+    name: "Effetto Rasato",
+    level: "Aree parzialmente diradate",
+    range: "€ 900 — € 1.200",
+    image: "/images/case-1.png",
+  },
+  {
+    n: "II",
+    name: "Effetto Densità",
+    level: "Diradamento esteso",
+    range: "€ 1.200 — € 1.800",
+    image: "/images/case-2.png",
+  },
+  {
+    n: "III",
+    name: "Copertura Cicatrici",
+    level: "Cicatrici da trapianto o traumi",
+    range: "€ 1.500 — € 2.200",
+    image: "/images/case-3.png",
+  },
+  {
+    n: "IV",
+    name: "Perfezionamento Post-Trapianto",
+    level: "Calvizie avanzata e completa",
+    range: "€ 2.200 — € 2.600",
+    image: "/images/transformation-1.png",
+  },
 ] as const;
 
 export const PILLARS = [
@@ -45,40 +168,6 @@ export const PILLARS = [
     n: "03",
     title: "Zero Manutenzione",
     body: "Una volta concluso il percorso, ti basterà un ritocco dopo 2 anni per rinfrescare l'intensità del pigmento.",
-  },
-] as const;
-
-export const STATS = [
-  { v: "8+", k: "Anni di Pratica" },
-  { v: "600+", k: "Clienti Seguiti" },
-  { v: "100%", k: "Risultati Garantiti" },
-  { v: "4.8 / 5", k: "Recensioni Verificate" },
-] as const;
-
-export const PROCESS = [
-  {
-    n: "I",
-    title: "Consulenza Privata",
-    body: "Un incontro intimo per ascoltare la tua storia, valutare la situazione del cuoio capelluto e disegnare insieme l'attaccatura ideale.",
-    duration: "45 min",
-  },
-  {
-    n: "II",
-    title: "Prima Seduta",
-    body: "Posiamo la base del pigmento. Si definisce la linea frontale, la densità e il tono esatto del follicolo per un effetto naturale.",
-    duration: "3 — 4 h",
-  },
-  {
-    n: "III",
-    title: "Seconda Seduta",
-    body: "A 10-14 giorni di distanza, si stratifica il colore. Il pigmento si fonde, la definizione si affina, l'effetto si fa tridimensionale.",
-    duration: "2 — 3 h",
-  },
-  {
-    n: "IV",
-    title: "Ritocco Finale",
-    body: "Ultimo passaggio per uniformare le micro-aree ancora leggere. Da qui in avanti, solo un controllo annuale.",
-    duration: "1 — 2 h",
   },
 ] as const;
 
