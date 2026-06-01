@@ -33,9 +33,14 @@ export default function Navbar() {
       >
         <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
           <a href="#top" className="group flex items-center gap-3 cursor-pointer" aria-label={SITE.name}>
-            <span className="display flex items-center text-xl tracking-wide text-cream">
-              Micro<span className="italic text-gold">Hair</span>
-            </span>
+            <Image
+              src="/images/microhair-logo.png"
+              alt={SITE.name}
+              width={1001}
+              height={563}
+              className="h-9 w-auto brightness-0 invert transition-opacity group-hover:opacity-75"
+              priority
+            />
             <span className="hidden h-3 w-px bg-line transition-colors group-hover:bg-gold/60 md:block" />
             <span className="num-mono hidden text-[10px] tracking-[0.4em] text-muted-2 transition-colors group-hover:text-gold md:block">
               LIVORNO · IT

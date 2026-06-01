@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { MapPin, Mail, Phone, ArrowUpRight } from "lucide-react";
 import { InstagramIcon as Instagram, FacebookIcon as Facebook } from "@/components/ui/SocialIcons";
 import { NAV, SITE } from "@/lib/constants";
@@ -104,11 +105,14 @@ export default function Footer() {
 
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <div className="flex items-baseline gap-3">
-              <span className="display text-3xl text-cream">Micro</span>
-              <span className="display text-3xl italic text-gold">Hair</span>
-            </div>
-            <p className="num-mono mt-3 text-[11px] tracking-widest text-muted-2">
+            <Image
+              src="/images/microhair-logo.png"
+              alt={SITE.name}
+              width={1001}
+              height={563}
+              className="h-14 w-auto brightness-0 invert opacity-90"
+            />
+            <p className="num-mono mt-4 text-[11px] tracking-widest text-muted-2">
               {SITE.byline.toUpperCase()} · LIVORNO, ITALIA · EST. 2017
             </p>
           </div>
