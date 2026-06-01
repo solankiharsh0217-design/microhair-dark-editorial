@@ -4,7 +4,7 @@ import { NAV, SITE } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer id="contatti" className="relative overflow-hidden border-t border-line bg-ink">
+    <footer className="relative overflow-hidden border-t border-line bg-ink">
       <div className="pointer-events-none absolute inset-0 gradient-radial-gold opacity-50" />
 
       <div className="relative mx-auto max-w-[1500px] px-5 pb-12 pt-28 md:px-10 md:pt-40">

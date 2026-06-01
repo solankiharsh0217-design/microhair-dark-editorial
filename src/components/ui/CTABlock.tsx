@@ -18,7 +18,7 @@ export default function CTABlock({
   secondaryLabel = "Prenota la tua consulenza gratuita in studio",
   align = "left",
   className = "",
-  variant = "whatsapp",
+  variant = "both",
 }: Props) {
   const justify =
     align === "center"

@@ -28,7 +28,7 @@ export default function PriceTier({
           src={image}
           alt={name}
           fill
-          sizes="(min-width: 768px) 25vw, 100vw"
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
@@ -37,7 +37,7 @@ export default function PriceTier({
         </div>
       </div>
       <div className="flex flex-1 flex-col p-6 md:p-7">
-        <p className="eyebrow-muted">Livello {romanToInt(n)}</p>
+        <p className="eyebrow-muted">Livello {n}</p>
         <h3 className="display mt-3 text-2xl text-cream md:text-3xl">{name}</h3>
         <p className="mt-2 text-sm text-cream-dim">{level}</p>
         <div className="hairline my-6" />
@@ -50,13 +50,3 @@ export default function PriceTier({
   );
 }
 
-function romanToInt(roman: string): string {
-  const map: Record<string, string> = {
-    I: "I",
-    II: "II",
-    III: "III",
-    IV: "IV",
-    V: "V",
-  };
-  return map[roman] ?? roman;
-}

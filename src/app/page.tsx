@@ -73,7 +73,6 @@ function Hero() {
           src="/images/hero-portrait.jpg"
           alt=""
           fill
-          preload
           sizes="100vw"
           className="slow-zoom object-cover"
           priority
@@ -104,7 +103,7 @@ function Hero() {
         </ScrollReveal>
 
         <div className="mt-12 grid grid-cols-1 gap-12 md:mt-16 md:grid-cols-12 md:gap-16">
-          <ScrollReveal delay={260}>
+          <ScrollReveal delay={260} className="md:col-span-7">
             <p className="max-w-xl text-base leading-[1.75] text-cream md:text-lg">
               La soluzione non invasiva per{" "}
               <em className="italic text-gold">calvizie, diradamento e cicatrici</em>.

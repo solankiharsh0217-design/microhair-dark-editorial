@@ -14,7 +14,7 @@ export const SITE = {
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Piazza+del+Cisternone+Livorno",
   rating: "4.8",
   reviewCount: "200+",
-  hours: "Lunedì — Sabato · 09:30 – 19:00",
+  hours: "Lun — Ven · 09:30 — 19:00 · Sab su appuntamento",
   social: {
     instagram: "https://www.instagram.com/microhair.it/",
     facebook: "https://www.facebook.com/61572637182316/",

@@ -16,7 +16,7 @@ export default function ServiceCard({ src, badge, title, body, index }: Props) {
           src={src}
           alt={title}
           fill
-          sizes="(min-width: 768px) 25vw, 100vw"
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
