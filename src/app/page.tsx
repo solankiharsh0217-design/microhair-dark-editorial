@@ -21,7 +21,6 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import CTABlock from "@/components/ui/CTABlock";
 import Accordion from "@/components/ui/Accordion";
-import ServiceCard from "@/components/ui/ServiceCard";
 import PriceTier from "@/components/ui/PriceTier";
 import ProcessStep from "@/components/ui/ProcessStep";
 import {
@@ -184,33 +183,6 @@ function Hero() {
 /* ───────────────────────────  02 · RISULTATI  ─────────────────────────── */
 
 function Risultati() {
-  const cases = [
-    {
-      src: "/images/transformation-1.png",
-      title: "Stempiatura Avanzata",
-      meta: "Norwood V — VI · 3 sedute",
-      detail: "Frontale + Vertex · ricostruzione completa",
-    },
-    {
-      src: "/images/case-1.png",
-      title: "Effetto Rasato",
-      meta: "Norwood IV — V · 2 sedute",
-      detail: "Densità full frontale",
-    },
-    {
-      src: "/images/case-2.png",
-      title: "Copertura Vertex",
-      meta: "Norwood III — IV · 2 sedute",
-      detail: "Riempimento crown area",
-    },
-    {
-      src: "/images/case-3.png",
-      title: "Densità Post-Trapianto",
-      meta: "Trapianto pregresso · 3 sedute",
-      detail: "Aumento densità visiva",
-    },
-  ];
-
   return (
     <section
       id="risultati"
@@ -233,7 +205,7 @@ function Risultati() {
               <div className="max-w-md space-y-4">
                 <p className="text-base leading-[1.75] text-cream-dim">
                   Quattro casi reali, fotografati nello studio di Livorno.
-                  Risultati ottenuti con il protocollo MicroHair, in 2-3 sedute
+                  Risultati ottenuti con il protocollo MicroHair, in 2–3 sedute
                   per caso.
                 </p>
                 <p className="eyebrow-muted text-[10px]">
@@ -245,47 +217,108 @@ function Risultati() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
-          {cases.map((c, i) => (
-            <ScrollReveal
-              key={c.title}
-              delay={i * 100}
-              className={i === 0 ? "md:col-span-2" : ""}
-            >
+        {/* Gallery — each B/A image shown at its native aspect ratio */}
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
+
+          {/* Left column: transformation-1 (portrait 3:4) stacked above case-1 (wide 21:9) */}
+          <div className="flex flex-col gap-6 md:w-5/12 md:shrink-0">
+            <ScrollReveal>
               <article className="group cursor-pointer">
-                <div
-                  className={`relative overflow-hidden border border-line bg-surface ${
-                    i === 0 ? "aspect-[16/9] md:aspect-[21/9]" : "aspect-[4/5]"
-                  }`}
-                >
+                <div className="relative aspect-[3/4] overflow-hidden border border-line bg-surface">
                   <Image
-                    src={c.src}
-                    alt={c.title}
+                    src="/images/transformation-1.png"
+                    alt="Stempiatura Avanzata — prima e dopo"
                     fill
-                    sizes={i === 0 ? "(min-width: 768px) 100vw, 100vw" : "(min-width: 768px) 50vw, 100vw"}
+                    sizes="(min-width: 768px) 42vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
-                  <div className="absolute left-6 top-6 md:left-8 md:top-8">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">
-                      CASO · 0{i + 1}
-                    </p>
+                  <div className="absolute left-6 top-6">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 01</p>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                    <h3 className="display text-2xl text-cream md:text-4xl">
-                      {c.title}
-                    </h3>
-                    <p className="mt-2 text-xs text-cream-dim md:text-sm">
-                      {c.meta}
-                    </p>
-                    <p className="mt-1 text-[11px] text-muted-2">
-                      {c.detail}
-                    </p>
+                    <h3 className="display text-2xl text-cream md:text-4xl">Stempiatura Avanzata</h3>
+                    <p className="mt-2 text-xs text-cream-dim md:text-sm">Norwood V — VI · 3 sedute</p>
+                    <p className="mt-1 text-[11px] text-muted-2">Frontale + Vertex · ricostruzione completa</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
-          ))}
+
+            <ScrollReveal delay={120}>
+              <article className="group cursor-pointer">
+                {/* case-1 is a horizontal side-by-side B/A (685×300 ≈ 21:9) */}
+                <div className="relative aspect-[21/9] overflow-hidden border border-line bg-surface">
+                  <Image
+                    src="/images/case-1.png"
+                    alt="Effetto Rasato — prima e dopo"
+                    fill
+                    sizes="(min-width: 768px) 42vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+                  <div className="absolute left-5 top-4">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 04</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5">
+                    <h3 className="display text-xl text-cream md:text-2xl">Effetto Rasato</h3>
+                    <p className="mt-1 text-[11px] text-cream-dim">Norwood IV — V · 2 sedute</p>
+                  </div>
+                </div>
+              </article>
+            </ScrollReveal>
+          </div>
+
+          {/* Right column: case-2 and case-3 stacked (both landscape 16:9) */}
+          <div className="flex flex-col gap-6 md:flex-1">
+            <ScrollReveal delay={80}>
+              <article className="group cursor-pointer">
+                {/* case-2 is horizontal B/A (563×322 ≈ 16:9) */}
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                  <Image
+                    src="/images/case-2.png"
+                    alt="Copertura Vertex — prima e dopo"
+                    fill
+                    sizes="(min-width: 768px) 58vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                  <div className="absolute left-6 top-5">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 02</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-6">
+                    <h3 className="display text-xl text-cream md:text-3xl">Copertura Vertex</h3>
+                    <p className="mt-1 text-xs text-cream-dim md:text-sm">Norwood III — IV · 2 sedute</p>
+                    <p className="mt-0.5 text-[11px] text-muted-2">Riempimento crown area</p>
+                  </div>
+                </div>
+              </article>
+            </ScrollReveal>
+
+            <ScrollReveal delay={160}>
+              <article className="group cursor-pointer">
+                {/* case-3 is horizontal B/A (563×322 ≈ 16:9) */}
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                  <Image
+                    src="/images/case-3.png"
+                    alt="Densità Post-Trapianto — prima e dopo"
+                    fill
+                    sizes="(min-width: 768px) 58vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                  <div className="absolute left-6 top-5">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 03</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-6">
+                    <h3 className="display text-xl text-cream md:text-3xl">Densità Post-Trapianto</h3>
+                    <p className="mt-1 text-xs text-cream-dim md:text-sm">Trapianto pregresso · 3 sedute</p>
+                    <p className="mt-0.5 text-[11px] text-muted-2">Aumento densità visiva</p>
+                  </div>
+                </div>
+              </article>
+            </ScrollReveal>
+          </div>
         </div>
 
         <ScrollReveal delay={250}>
@@ -697,16 +730,30 @@ function Soluzioni() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
+        {/* 2×2 editorial grid — no B/A images, each card is text-first */}
+        <div className="grid grid-cols-1 border-t border-line md:grid-cols-2">
           {SOLUTIONS.map((s, i) => (
             <ScrollReveal key={s.title} delay={i * 80}>
-              <ServiceCard
-                src={s.src}
-                badge={s.badge}
-                title={s.title}
-                body={s.body}
-                index={i}
-              />
+              <article
+                className={`group border-b border-line p-8 transition-all hover:bg-gold/[0.03] md:p-10 ${
+                  i % 2 === 1 ? "md:border-l md:border-line" : ""
+                }`}
+              >
+                <span className="num-mono text-5xl leading-none text-gold/20 transition-colors group-hover:text-gold/40 md:text-6xl">
+                  0{i + 1}
+                </span>
+                <p className="eyebrow-muted mt-8">{s.badge}</p>
+                <h3 className="display mt-3 text-3xl text-cream transition-colors group-hover:text-gold md:text-4xl">
+                  {s.title}
+                </h3>
+                <p className="mt-5 text-sm leading-[1.8] text-cream-dim md:text-base">
+                  {s.body}
+                </p>
+                <div className="mt-7 flex items-center gap-2 text-xs font-medium text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span className="border-b border-gold/40 pb-0.5">Richiedi un preventivo</span>
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>
@@ -977,38 +1024,37 @@ function Simulazione() {
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
+            {/* B/A images shown at their native landscape aspect ratios */}
+            <div className="flex flex-col gap-4 md:gap-6">
               <ScrollReveal delay={200}>
-                <div className="relative aspect-[3/4] overflow-hidden border border-line bg-surface">
+                {/* case-1 is a horizontal B/A (685×300 ≈ 21:9) */}
+                <div className="relative aspect-[21/9] overflow-hidden border border-line bg-surface">
                   <Image
                     src="/images/case-1.png"
-                    alt="Simulazione SMP — caso 1"
+                    alt="Risultato SMP — effetto rasato prima e dopo"
                     fill
-                    sizes="(min-width: 768px) 35vw, 50vw"
+                    sizes="(min-width: 768px) 58vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">
-                      Caso A
-                    </p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                  <div className="absolute bottom-4 left-5">
+                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Caso A · Effetto Rasato</p>
                   </div>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={300}>
-                <div className="relative aspect-[3/4] overflow-hidden border border-line bg-surface">
+                {/* case-2 is a horizontal B/A (563×322 ≈ 16:9) */}
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
                     src="/images/case-2.png"
-                    alt="Simulazione SMP — caso 2"
+                    alt="Risultato SMP — densità vertex prima e dopo"
                     fill
-                    sizes="(min-width: 768px) 35vw, 50vw"
+                    sizes="(min-width: 768px) 58vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">
-                      Caso B
-                    </p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                  <div className="absolute bottom-4 left-5">
+                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Caso B · Copertura Vertex</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -1073,7 +1119,6 @@ function Investimento() {
                 name={t.name}
                 level={t.level}
                 range={t.range}
-                image={t.image}
                 highlight={i === 2}
               />
             </ScrollReveal>
