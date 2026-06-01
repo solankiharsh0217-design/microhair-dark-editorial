@@ -54,7 +54,7 @@ export default function CTABlock({
       {(variant === "phone" || variant === "both") && (
         <a
           href={secondaryHref}
-          className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gold/40 bg-transparent px-7 py-4 text-xs font-semibold tracking-wider text-cream uppercase transition-all hover:border-gold hover:bg-gold/5"
+          className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gold/40 bg-transparent px-7 py-4 text-xs font-semibold tracking-wide text-cream uppercase transition-all hover:border-gold hover:bg-gold/5"
         >
           {secondaryLabel}
           <span className="flex h-5 w-5 items-center justify-center rounded-full border border-gold/40 text-gold transition-transform group-hover:rotate-45">

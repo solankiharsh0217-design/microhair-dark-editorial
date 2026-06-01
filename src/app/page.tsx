@@ -169,7 +169,7 @@ function Hero() {
             <div className="flex items-center gap-3 text-[11px] text-cream-dim">
               <span className="num-mono tracking-widest">SCROLL ↓</span>
               <span className="h-px w-12 bg-cream/20" />
-              <span>Capitolo 01 — I Risultati</span>
+              <span className="hidden sm:inline">Capitolo 01 — I Risultati</span>
             </div>
           </div>
         </ScrollReveal>
@@ -184,7 +184,7 @@ function Risultati() {
   return (
     <section
       id="risultati"
-      className="relative border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
@@ -228,9 +228,10 @@ function Risultati() {
                     alt="Stempiatura Avanzata — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 42vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-6 top-6">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 01</p>
                   </div>
@@ -252,9 +253,10 @@ function Risultati() {
                     alt="Effetto Rasato — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 42vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-5 top-4">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 04</p>
                   </div>
@@ -278,9 +280,10 @@ function Risultati() {
                     alt="Copertura Vertex — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-6 top-5">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 02</p>
                   </div>
@@ -302,9 +305,10 @@ function Risultati() {
                     alt="Densità Post-Trapianto — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-6 top-5">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 03</p>
                   </div>
@@ -342,7 +346,7 @@ function Problema() {
   return (
     <section
       id="problema"
-      className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative overflow-hidden border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full gradient-radial-gold opacity-30 blur-3xl" />
 
@@ -414,7 +418,7 @@ function Metodo() {
   return (
     <section
       id="metodo"
-      className="relative border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <ScrollReveal>
@@ -550,7 +554,7 @@ function Benefici() {
   };
 
   return (
-    <section className="relative border-b border-line py-16 md:py-24 lg:py-36">
+    <section className="relative border-b border-line py-12 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
@@ -640,7 +644,7 @@ function Processo() {
   return (
     <section
       id="processo"
-      className="relative border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
@@ -698,7 +702,7 @@ function Soluzioni() {
   return (
     <section
       id="soluzioni"
-      className="relative border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
@@ -720,7 +724,7 @@ function Soluzioni() {
                 <p className="eyebrow-muted text-[10px]">Soluzioni personalizzate per ogni esigenza</p>
                 <CTABlock
                   primaryLabel="Preventivo gratuito in 24h"
-                  secondaryLabel="Consulenza in studio"
+                  secondaryLabel="Consulenza gratuita"
                   align="left"
                 />
               </div>
@@ -735,6 +739,8 @@ function Soluzioni() {
               <article
                 className={`group border-b border-line p-6 transition-all hover:bg-gold/[0.03] sm:p-8 md:p-10 ${
                   i % 2 === 1 ? "md:border-l md:border-line" : ""
+                } ${i >= SOLUTIONS.length - 2 ? "md:border-b-0" : ""} ${
+                  i === SOLUTIONS.length - 1 ? "border-b-0" : ""
                 }`}
               >
                 <span className="num-mono text-4xl leading-none text-gold/20 transition-colors group-hover:text-gold/40 sm:text-5xl md:text-6xl">
@@ -766,7 +772,7 @@ function Eccellenza() {
   return (
     <section
       id="eccellenza"
-      className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative overflow-hidden border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full gradient-radial-gold opacity-30 blur-3xl" />
 
@@ -793,16 +799,16 @@ function Eccellenza() {
           <ScrollReveal>
             <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
               <Image
-                src="/images/portrait-luca.png"
-                alt="Luca Sagona — Fondatore MicroHair"
+                src="/images/fade-detail.jpg"
+                alt="Tecnica MicroHair — risultato del trattamento"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
               <div className="absolute left-6 top-6">
                 <p className="num-mono text-[10px] tracking-[0.3em] text-gold">
-                  LUCA SAGONA · FONDATORE
+                  LA TECNICA · IN STUDIO
                 </p>
               </div>
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
@@ -887,7 +893,7 @@ function Eccellenza() {
 
 function TrapiantoVsMicrohair() {
   return (
-    <section className="relative border-b border-line py-16 md:py-24 lg:py-36">
+    <section className="relative border-b border-line py-12 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
@@ -959,7 +965,7 @@ function TrapiantoVsMicrohair() {
 
 function Simulazione() {
   return (
-    <section className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36">
+    <section className="relative overflow-hidden border-b border-line py-12 md:py-20 lg:py-28">
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[500px] w-[500px] rounded-full gradient-radial-gold opacity-30 blur-3xl" />
 
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
@@ -1034,7 +1040,8 @@ function Simulazione() {
                     sizes="(min-width: 768px) 58vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-5">
                     <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Caso A · Effetto Rasato</p>
                   </div>
@@ -1050,7 +1057,8 @@ function Simulazione() {
                     sizes="(min-width: 768px) 58vw, 100vw"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-5">
                     <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Caso B · Copertura Vertex</p>
                   </div>
@@ -1082,7 +1090,7 @@ function Investimento() {
   return (
     <section
       id="investimento"
-      className="relative border-b border-line py-16 md:py-24 lg:py-36"
+      className="relative border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
@@ -1123,8 +1131,8 @@ function Investimento() {
           ))}
         </div>
 
-        <ScrollReveal delay={350}>
-          <div className="mt-16 border-t border-line pt-12">
+        <ScrollReveal delay={150}>
+          <div className="mt-10 border-t border-line pt-10">
             <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-7">
                 <p className="eyebrow-muted">— Pagamenti flessibili</p>
@@ -1172,7 +1180,7 @@ function Investimento() {
 
 function FAQ() {
   return (
-    <section id="faq" className="relative border-b border-line py-16 md:py-24 lg:py-36">
+    <section id="faq" className="relative border-b border-line py-12 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
@@ -1212,7 +1220,7 @@ function FAQ() {
 
 function Testimonianze() {
   return (
-    <section className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36">
+    <section className="relative overflow-hidden border-b border-line py-12 md:py-20 lg:py-28">
       <div className="pointer-events-none absolute inset-0 grain opacity-40" />
       <div className="relative mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="mb-16 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
@@ -1297,7 +1305,7 @@ function StudioPrenota() {
   return (
     <section
       id="contatti"
-      className="relative overflow-hidden py-16 md:py-24 lg:py-36"
+      className="relative overflow-hidden py-12 md:py-20 lg:py-28"
     >
       <div className="pointer-events-none absolute inset-0 gradient-radial-gold opacity-20" />
       <div className="pointer-events-none absolute inset-0 grain opacity-30" />

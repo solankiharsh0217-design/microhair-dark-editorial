@@ -47,6 +47,10 @@
     letter-spacing: -0.01em;
     line-height: 1;
   }
+  /* P0 — offset sticky navbar (68px) on anchor jumps */
+  section[id] {
+    scroll-margin-top: 80px;
+  }
   h5, h6 {
     font-family: var(--font-sans);
     font-weight: 500;

@@ -19,7 +19,7 @@ export default function PriceTier({ n, name, level, range, highlight }: Props) {
       }`}
     >
       {/* Decorative tier numeral */}
-      <span className="display text-7xl leading-none text-gold/15 transition-colors group-hover:text-gold/35 md:text-8xl">
+      <span className={`display text-7xl leading-none transition-colors md:text-8xl ${highlight ? "text-gold/35 group-hover:text-gold/50" : "text-gold/25 group-hover:text-gold/40"}`}>
         {n}
       </span>
 

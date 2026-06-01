@@ -95,7 +95,7 @@ export default function Navbar() {
               alt={SITE.name}
               width={1001}
               height={563}
-              className="h-8 w-auto brightness-0 invert opacity-50"
+              className="h-8 w-auto brightness-0 invert opacity-75"
             />
             <p className="eyebrow-muted">Naviga</p>
           </div>

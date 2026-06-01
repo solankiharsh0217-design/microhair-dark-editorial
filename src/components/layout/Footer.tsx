@@ -113,7 +113,10 @@ export default function Footer() {
               className="h-14 w-auto brightness-0 invert opacity-90"
             />
             <p className="num-mono mt-4 text-[11px] tracking-widest text-muted-2">
-              {SITE.byline.toUpperCase()} · LIVORNO, ITALIA · EST. 2017
+              {SITE.byline.toUpperCase()}
+              <br className="sm:hidden" />
+              <span className="hidden sm:inline"> · </span>
+              LIVORNO, ITALIA · EST. 2017
             </p>
           </div>
 
@@ -141,7 +144,9 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 text-[11px] tracking-wide text-muted-2 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} {SITE.fullName}. Tutti i diritti riservati.</p>
-          <p className="num-mono">P.IVA · IT00000000000</p>
+          <div className="flex items-center gap-4">
+            <a href="/privacy" className="hover:text-gold transition-colors">Privacy Policy</a>
+          </div>
         </div>
       </div>
     </footer>
