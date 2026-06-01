@@ -7,8 +7,8 @@ export default function Footer() {
     <footer id="contatti" className="relative overflow-hidden border-t border-line bg-ink">
       <div className="pointer-events-none absolute inset-0 gradient-radial-gold opacity-50" />
 
-      <div className="relative mx-auto max-w-[1500px] px-5 pb-10 pt-24 md:px-10 md:pt-32">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
+      <div className="relative mx-auto max-w-[1500px] px-5 pb-12 pt-28 md:px-10 md:pt-40">
+        <div className="grid grid-cols-1 gap-20 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <p className="eyebrow">— Inizia da qui</p>
             <h2 className="display mt-6 max-w-2xl text-5xl leading-[0.95] text-cream md:text-7xl">
@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="hairline my-16" />
+        <div className="hairline my-20" />
 
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
