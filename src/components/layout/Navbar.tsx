@@ -32,7 +32,12 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
-          <a href="#top" className="group cursor-pointer" aria-label={SITE.name}>
+          <a
+            href="#top"
+            className="group cursor-pointer"
+            aria-label={SITE.name}
+            onClick={() => setOpen(false)}
+          >
             <Image
               src="/images/microhair-logo.png"
               alt={SITE.name}

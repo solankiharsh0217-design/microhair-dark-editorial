@@ -1,11 +1,9 @@
 import Image from "next/image";
 import {
   ArrowUpRight,
-  ArrowDown,
   Star,
   Check,
   Sparkles,
-  Award,
   ShieldCheck,
   Quote,
   MapPin,
@@ -13,7 +11,6 @@ import {
   Mail,
   Calendar,
   Clock,
-  Send,
   Shield,
 } from "lucide-react";
 import { InstagramIcon as Instagram } from "@/components/ui/SocialIcons";
@@ -23,6 +20,7 @@ import CTABlock from "@/components/ui/CTABlock";
 import Accordion from "@/components/ui/Accordion";
 import PriceTier from "@/components/ui/PriceTier";
 import ProcessStep from "@/components/ui/ProcessStep";
+import ContactForm from "@/components/ui/ContactForm";
 import {
   SITE,
   PROBLEMS,
@@ -32,7 +30,6 @@ import {
   PROCESS,
   SOLUTIONS,
   PRICING_TIERS,
-  PILLARS,
   FAQS,
   TESTIMONIALS,
 } from "@/lib/constants";
@@ -946,7 +943,7 @@ function TrapiantoVsMicrohair() {
               <div className="mt-10 border-t border-line pt-8">
                 <CTABlock
                   primaryLabel="Prenota una consulenza gratuita"
-                  secondaryLabel="Invia le tue foto"
+                  secondaryLabel="Chiama direttamente"
                   align="left"
                 />
               </div>
@@ -1323,84 +1320,7 @@ function StudioPrenota() {
               </p>
             </ScrollReveal>
 
-            <form className="mt-10 space-y-6 md:mt-14 md:space-y-7">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field label="Nome" placeholder="Il tuo nome" />
-                <Field label="Cognome" placeholder="Il tuo cognome" />
-              </div>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field label="Email" type="email" placeholder="tu@email.com" />
-                <Field label="Telefono" type="tel" placeholder="+39 351 555 8821" />
-              </div>
-              <div>
-                <label className="eyebrow-muted mb-4 block">La tua situazione</label>
-                <select
-                  className="w-full appearance-none border border-line bg-surface/30 px-5 py-4 text-base text-cream outline-none transition-all focus:border-gold"
-                  defaultValue=""
-                >
-                  <option value="" disabled className="bg-ink">Seleziona...</option>
-                  <option className="bg-ink">Stempiatura frontale</option>
-                  <option className="bg-ink">Diradamento vertex</option>
-                  <option className="bg-ink">Calvizie avanzata</option>
-                  <option className="bg-ink">Copertura cicatrici</option>
-                  <option className="bg-ink">Densità post-trapianto</option>
-                  <option className="bg-ink">Correzione lavori precedenti</option>
-                </select>
-              </div>
-              <div>
-                <label className="eyebrow-muted mb-4 block">
-                  Quando preferisci essere ricontattato?
-                </label>
-                <div className="grid grid-cols-3 gap-3">
-                  {["Mattina", "Pomeriggio", "Sera"].map((s) => (
-                    <label
-                      key={s}
-                      className="group flex cursor-pointer items-center justify-center border border-line bg-surface/30 px-4 py-4 text-sm text-cream-dim transition-all hover:border-gold/60 has-[:checked]:border-gold has-[:checked]:bg-gold/10 has-[:checked]:text-cream"
-                    >
-                      <input type="radio" name="time" className="sr-only" />
-                      {s}
-                    </label>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <label className="eyebrow-muted mb-4 block">
-                  Messaggio (opzionale)
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Raccontaci la tua storia..."
-                  className="w-full resize-none border border-line bg-surface/30 px-5 py-4 text-base text-cream placeholder:text-muted-2 outline-none transition-all focus:border-gold"
-                />
-              </div>
-              <label className="flex cursor-pointer items-start gap-3 text-xs text-cream-dim">
-                <input type="checkbox" className="mt-0.5 accent-gold" />
-                <span>
-                  Ho letto e accetto l&apos;
-                  <a href="#" className="text-gold underline-offset-2 hover:underline">
-                    Informativa sulla Privacy
-                  </a>
-                  .
-                </span>
-              </label>
-              <div className="flex flex-col items-stretch gap-4 sm:flex-row">
-                <button
-                  type="submit"
-                  className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-gold px-8 py-5 text-sm font-semibold tracking-wide text-ink transition-all hover:bg-cream"
-                >
-                  Invia la tua richiesta
-                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
-                <a
-                  href={SITE.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gold/40 px-8 py-5 text-sm font-semibold tracking-wide text-cream transition-all hover:border-gold hover:bg-gold/5"
-                >
-                  Scrivici su WhatsApp
-                </a>
-              </div>
-            </form>
+            <ContactForm />
           </div>
 
           <div className="md:col-span-5 md:pl-8">
@@ -1460,26 +1380,6 @@ function StudioPrenota() {
   );
 }
 
-function Field({
-  label,
-  type = "text",
-  placeholder,
-}: {
-  label: string;
-  type?: string;
-  placeholder: string;
-}) {
-  return (
-    <div>
-      <label className="eyebrow-muted mb-4 block">{label}</label>
-      <input
-        type={type}
-        placeholder={placeholder}
-        className="w-full border border-line bg-surface/30 px-5 py-4 text-base text-cream placeholder:text-muted-2 outline-none transition-all focus:border-gold"
-      />
-    </div>
-  );
-}
 
 function ContactRow({
   icon: Icon,
