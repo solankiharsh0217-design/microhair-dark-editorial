@@ -32,19 +32,15 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
-          <a href="#top" className="group flex items-center gap-3 cursor-pointer" aria-label={SITE.name}>
+          <a href="#top" className="group cursor-pointer" aria-label={SITE.name}>
             <Image
               src="/images/microhair-logo.png"
               alt={SITE.name}
               width={1001}
               height={563}
-              className="h-9 w-auto brightness-0 invert transition-opacity group-hover:opacity-75"
+              className="h-10 w-auto brightness-0 invert transition-opacity group-hover:opacity-70 md:h-12"
               priority
             />
-            <span className="hidden h-3 w-px bg-line transition-colors group-hover:bg-gold/60 md:block" />
-            <span className="num-mono hidden text-[10px] tracking-[0.4em] text-muted-2 transition-colors group-hover:text-gold md:block">
-              LIVORNO · IT
-            </span>
           </a>
 
           <nav className="hidden items-center gap-9 lg:flex">
@@ -88,7 +84,14 @@ export default function Navbar() {
         }`}
       >
         <div className="flex h-full flex-col justify-center px-8 pt-24">
-          <div className="mb-10">
+          <div className="mb-10 flex flex-col gap-6">
+            <Image
+              src="/images/microhair-logo.png"
+              alt={SITE.name}
+              width={1001}
+              height={563}
+              className="h-8 w-auto brightness-0 invert opacity-50"
+            />
             <p className="eyebrow-muted">Naviga</p>
           </div>
           <nav className="flex flex-col gap-1">

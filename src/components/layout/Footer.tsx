@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-20 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
             <p className="eyebrow">— Inizia da qui</p>
-            <h2 className="display mt-6 max-w-2xl text-5xl leading-[0.95] text-cream md:text-7xl">
+            <h2 className="display mt-6 max-w-2xl text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
               La <em className="italic text-gold">prima</em> conversazione
               <br />
               non costa nulla.

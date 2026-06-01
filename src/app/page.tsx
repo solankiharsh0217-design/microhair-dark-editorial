@@ -94,14 +94,14 @@ function Hero() {
         </ScrollReveal>
 
         <ScrollReveal delay={120}>
-          <h1 className="display mt-10 max-w-5xl text-[14vw] leading-[0.92] text-cream sm:text-[11vw] md:mt-14 md:text-[8.5rem] lg:text-[9.5rem]">
+          <h1 className="display mt-6 max-w-5xl text-[13vw] leading-[0.92] text-cream sm:text-[11vw] md:mt-14 md:text-[8.5rem] lg:text-[9.5rem]">
             Buongiorno,
             <br />
             <em className="italic text-gold">mi chiamo Luca.</em>
           </h1>
         </ScrollReveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-12 md:mt-16 md:grid-cols-12 md:gap-16">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-12 md:gap-16">
           <ScrollReveal delay={260} className="md:col-span-7">
             <p className="max-w-xl text-base leading-[1.75] text-cream md:text-lg">
               La soluzione non invasiva per{" "}
@@ -113,16 +113,17 @@ function Hero() {
                 href={SITE.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-gold px-8 py-5 text-sm font-semibold tracking-wide text-ink transition-all hover:bg-cream"
+                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-gold px-6 py-4 text-sm font-semibold tracking-wide text-ink transition-all hover:bg-cream sm:px-8 sm:py-5"
               >
-                {whatsappCTA}
+                <span className="sm:hidden">Preventivo gratuito su WhatsApp</span>
+                <span className="hidden sm:inline">{whatsappCTA}</span>
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink text-gold transition-transform group-hover:rotate-45">
                   <ArrowUpRight className="h-3.5 w-3.5" />
                 </span>
               </a>
               <a
                 href={SITE.phoneLink}
-                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-cream/30 bg-ink/40 px-8 py-5 text-sm font-medium tracking-wide text-cream backdrop-blur-md transition-all hover:border-gold hover:text-gold"
+                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-cream/30 bg-ink/40 px-6 py-4 text-sm font-medium tracking-wide text-cream backdrop-blur-md transition-all hover:border-gold hover:text-gold sm:px-8 sm:py-5"
               >
                 <Phone className="h-4 w-4" />
                 {bookingCTA}
@@ -130,7 +131,7 @@ function Hero() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={380} className="md:col-span-4 md:col-start-9 md:pt-3">
+          <ScrollReveal delay={380} className="hidden md:col-span-4 md:col-start-9 md:block md:pt-3">
             <div className="space-y-4 border-l border-cream/20 pl-6">
               <p className="eyebrow-muted">— La promessa</p>
               <ul className="space-y-3 text-sm text-cream-dim md:text-base">
@@ -152,7 +153,7 @@ function Hero() {
         </div>
 
         <ScrollReveal delay={500}>
-          <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-cream/15 pt-6 md:mt-24 md:flex-row md:items-center">
+          <div className="mt-10 flex flex-col items-start justify-between gap-4 border-t border-cream/15 pt-5 md:mt-20 md:flex-row md:items-center">
             <div className="flex items-center gap-3 text-[11px] text-cream-dim">
               <Star className="h-3 w-3 fill-gold text-gold" />
               <span className="num-mono text-cream">{SITE.rating}</span>
@@ -186,14 +187,14 @@ function Risultati() {
   return (
     <section
       id="risultati"
-      className="relative border-b border-line py-24 md:py-36"
+      className="relative border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="mb-16 grid grid-cols-1 gap-12 md:mb-20 md:grid-cols-12 md:gap-20">
+        <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
               <SectionLabel n="01">Risultati</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-7xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
                 <em className="italic text-gold">Prima</em> e dopo.
                 <br />
                 <span className="text-cream-dim">Vera sicurezza.</span>
@@ -344,16 +345,16 @@ function Problema() {
   return (
     <section
       id="problema"
-      className="relative overflow-hidden border-b border-line py-24 md:py-36"
+      className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full gradient-radial-gold opacity-30 blur-3xl" />
 
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <ScrollReveal>
               <SectionLabel n="02">Il problema</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Ti riconosci
                 <br />
                 in una di queste
@@ -416,12 +417,12 @@ function Metodo() {
   return (
     <section
       id="metodo"
-      className="relative border-b border-line py-24 md:py-36"
+      className="relative border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
         <ScrollReveal>
           <SectionLabel n="03">Cos&apos;è la Microhair</SectionLabel>
-          <h2 className="display mt-7 max-w-4xl text-5xl leading-[0.95] text-cream md:text-7xl">
+          <h2 className="display mt-7 max-w-4xl text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
             Non è un tatuaggio.
             <br />
             <em className="italic text-gold">È una disciplina.</em>
@@ -434,7 +435,7 @@ function Metodo() {
           </p>
         </ScrollReveal>
 
-        <div className="mt-20 grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-16">
+        <div className="mt-12 grid grid-cols-1 items-center gap-8 md:mt-20 md:grid-cols-12 md:gap-16">
           <ScrollReveal className="md:col-span-6">
             <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
               <Image
@@ -488,7 +489,7 @@ function Metodo() {
           </ScrollReveal>
         </div>
 
-        <div className="mt-24 grid grid-cols-1 items-center gap-12 border-t border-line pt-20 md:grid-cols-12 md:gap-16">
+        <div className="mt-12 grid grid-cols-1 items-center gap-8 border-t border-line pt-12 md:mt-24 md:grid-cols-12 md:gap-16 md:pt-20">
           <ScrollReveal className="md:col-span-6 md:order-2">
             <div className="relative aspect-[4/3] overflow-hidden border border-line bg-surface">
               <Image
@@ -552,13 +553,13 @@ function Benefici() {
   };
 
   return (
-    <section className="relative border-b border-line py-24 md:py-36">
+    <section className="relative border-b border-line py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <ScrollReveal>
               <SectionLabel n="04">I benefici</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Quattro motivi
                 <br />
                 per iniziare{" "}
@@ -642,14 +643,14 @@ function Processo() {
   return (
     <section
       id="processo"
-      className="relative border-b border-line py-24 md:py-36"
+      className="relative border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="mb-16 grid grid-cols-1 gap-12 md:mb-20 md:grid-cols-12 md:gap-20">
+        <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
               <SectionLabel n="05">Il processo</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Come funziona la
                 <br />
                 <em className="italic text-gold">micropigmentazione?</em>
@@ -700,14 +701,14 @@ function Soluzioni() {
   return (
     <section
       id="soluzioni"
-      className="relative border-b border-line py-24 md:py-36"
+      className="relative border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="mb-16 grid grid-cols-1 gap-12 md:mb-20 md:grid-cols-12 md:gap-20">
+        <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
               <SectionLabel n="06">Le soluzioni</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-7xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
                 <em className="italic text-gold">Per</em> quali
                 <br />
                 casi è indicata
@@ -735,11 +736,11 @@ function Soluzioni() {
           {SOLUTIONS.map((s, i) => (
             <ScrollReveal key={s.title} delay={i * 80}>
               <article
-                className={`group border-b border-line p-8 transition-all hover:bg-gold/[0.03] md:p-10 ${
+                className={`group border-b border-line p-6 transition-all hover:bg-gold/[0.03] sm:p-8 md:p-10 ${
                   i % 2 === 1 ? "md:border-l md:border-line" : ""
                 }`}
               >
-                <span className="num-mono text-5xl leading-none text-gold/20 transition-colors group-hover:text-gold/40 md:text-6xl">
+                <span className="num-mono text-4xl leading-none text-gold/20 transition-colors group-hover:text-gold/40 sm:text-5xl md:text-6xl">
                   0{i + 1}
                 </span>
                 <p className="eyebrow-muted mt-8">{s.badge}</p>
@@ -768,7 +769,7 @@ function Eccellenza() {
   return (
     <section
       id="eccellenza"
-      className="relative overflow-hidden border-b border-line py-24 md:py-36"
+      className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="pointer-events-none absolute -right-40 top-0 h-[500px] w-[500px] rounded-full gradient-radial-gold opacity-30 blur-3xl" />
 
@@ -777,7 +778,7 @@ function Eccellenza() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <SectionLabel n="07">Eccellenza</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-7xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
                 Il nostro
                 <br />
                 protocollo{" "}
@@ -791,7 +792,7 @@ function Eccellenza() {
           </div>
         </ScrollReveal>
 
-        <div className="mt-16 grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 md:gap-10">
+        <div className="mt-10 grid grid-cols-1 items-stretch gap-6 md:mt-16 md:grid-cols-2 md:gap-10">
           <ScrollReveal>
             <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
               <Image
@@ -845,7 +846,7 @@ function Eccellenza() {
           </ScrollReveal>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-10 border-t border-line pt-12 md:grid-cols-12 md:gap-12">
+        <div className="mt-10 grid grid-cols-1 gap-8 border-t border-line pt-10 md:mt-16 md:grid-cols-12 md:gap-12 md:pt-12">
           <ScrollReveal className="md:col-span-7">
             <p className="eyebrow-muted">— Cosa facciamo</p>
             <h3 className="display mt-5 text-3xl leading-[1.1] text-cream md:text-4xl">
@@ -889,13 +890,13 @@ function Eccellenza() {
 
 function TrapiantoVsMicrohair() {
   return (
-    <section className="relative border-b border-line py-24 md:py-36">
+    <section className="relative border-b border-line py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <ScrollReveal>
               <SectionLabel n="08">Una scelta serena</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Trapianto o
                 <br />
                 <em className="italic text-gold">micropigmentazione?</em>
@@ -961,15 +962,15 @@ function TrapiantoVsMicrohair() {
 
 function Simulazione() {
   return (
-    <section className="relative overflow-hidden border-b border-line py-24 md:py-36">
+    <section className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36">
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[500px] w-[500px] rounded-full gradient-radial-gold opacity-30 blur-3xl" />
 
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <ScrollReveal>
               <SectionLabel n="09">La simulazione</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Non riesci a
                 <br />
                 immaginarti con la
@@ -1084,14 +1085,14 @@ function Investimento() {
   return (
     <section
       id="investimento"
-      className="relative border-b border-line py-24 md:py-36"
+      className="relative border-b border-line py-16 md:py-24 lg:py-36"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="mb-16 grid grid-cols-1 gap-12 md:mb-20 md:grid-cols-12 md:gap-20">
+        <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
               <SectionLabel n="10">L&apos;investimento</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-7xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
                 Ma quanto
                 <br />
                 <em className="italic text-gold">costa</em> la
@@ -1174,13 +1175,13 @@ function Investimento() {
 
 function FAQ() {
   return (
-    <section id="faq" className="relative border-b border-line py-24 md:py-36">
+    <section id="faq" className="relative border-b border-line py-16 md:py-24 lg:py-36">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-5">
             <ScrollReveal>
               <SectionLabel n="11">Domande frequenti</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Tutto quello che
                 <br />
                 vuoi <em className="italic text-gold">sapere.</em>
@@ -1214,14 +1215,14 @@ function FAQ() {
 
 function Testimonianze() {
   return (
-    <section className="relative overflow-hidden border-b border-line py-24 md:py-36">
+    <section className="relative overflow-hidden border-b border-line py-16 md:py-24 lg:py-36">
       <div className="pointer-events-none absolute inset-0 grain opacity-40" />
       <div className="relative mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="mb-16 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
           <ScrollReveal>
             <div>
               <SectionLabel n="12">Testimonianze</SectionLabel>
-              <h2 className="display mt-7 max-w-3xl text-5xl leading-[0.95] text-cream md:text-6xl">
+              <h2 className="display mt-7 max-w-3xl text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
                 Cosa dicono
                 <br />
                 <em className="italic text-gold">i nostri clienti.</em>
@@ -1299,17 +1300,17 @@ function StudioPrenota() {
   return (
     <section
       id="contatti"
-      className="relative overflow-hidden py-24 md:py-36"
+      className="relative overflow-hidden py-16 md:py-24 lg:py-36"
     >
       <div className="pointer-events-none absolute inset-0 gradient-radial-gold opacity-20" />
       <div className="pointer-events-none absolute inset-0 grain opacity-30" />
 
       <div className="relative mx-auto max-w-[1500px] px-5 md:px-10">
-        <div className="grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
               <SectionLabel n="13">Lo studio</SectionLabel>
-              <h2 className="display mt-7 text-5xl leading-[0.95] text-cream md:text-7xl">
+              <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
                 Studio di
                 <br />
                 <em className="italic text-gold">micropigmentazione</em>
@@ -1322,7 +1323,7 @@ function StudioPrenota() {
               </p>
             </ScrollReveal>
 
-            <form className="mt-14 space-y-7">
+            <form className="mt-10 space-y-6 md:mt-14 md:space-y-7">
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <Field label="Nome" placeholder="Il tuo nome" />
                 <Field label="Cognome" placeholder="Il tuo cognome" />
