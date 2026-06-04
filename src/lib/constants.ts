@@ -22,13 +22,11 @@ export const SITE = {
 } as const;
 
 export const NAV = [
-  { label: "Risultati", href: "#risultati" },
-  { label: "Il Metodo", href: "#metodo" },
-  { label: "Processo", href: "#processo" },
-  { label: "Soluzioni", href: "#soluzioni" },
-  { label: "Investimento", href: "#investimento" },
-  { label: "Domande", href: "#faq" },
-  { label: "Contatti", href: "#contatti" },
+  { label: "Risultati", href: "/risultati" },
+  { label: "Il Trattamento", href: "/trattamento" },
+  { label: "Prezzi", href: "/prezzi" },
+  { label: "Chi Siamo", href: "/chi-siamo" },
+  { label: "Contatti", href: "/contatti" },
 ] as const;
 
 export const PROBLEMS = [

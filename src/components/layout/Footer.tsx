@@ -46,19 +46,19 @@ export default function Footer() {
               <p className="eyebrow-muted mb-5">Atelier</p>
               <ul className="space-y-2.5 text-sm text-cream-dim">
                 <li>
-                  <a href="#metodo" className="hover:text-gold">Il Metodo</a>
+                  <a href="/trattamento" className="hover:text-gold">Il Trattamento</a>
                 </li>
                 <li>
-                  <a href="#eccellenza" className="hover:text-gold">L'Eccellenza</a>
+                  <a href="/chi-siamo" className="hover:text-gold">Chi Siamo</a>
                 </li>
                 <li>
-                  <a href="#risultati" className="hover:text-gold">Risultati</a>
+                  <a href="/risultati" className="hover:text-gold">Risultati</a>
                 </li>
                 <li>
-                  <a href="#processo" className="hover:text-gold">Processo</a>
+                  <a href="/prezzi" className="hover:text-gold">Prezzi</a>
                 </li>
                 <li>
-                  <a href="#faq" className="hover:text-gold">Domande</a>
+                  <a href="/contatti" className="hover:text-gold">Contatti & FAQ</a>
                 </li>
               </ul>
             </div>

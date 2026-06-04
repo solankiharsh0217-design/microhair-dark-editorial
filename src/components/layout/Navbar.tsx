@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { NAV, SITE } from "@/lib/constants";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -17,10 +20,11 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
+
+  // Close mobile menu on route change
+  useEffect(() => { setOpen(false); }, [pathname]);
 
   return (
     <>
@@ -32,12 +36,7 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto flex max-w-[1500px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
-          <a
-            href="#top"
-            className="group cursor-pointer"
-            aria-label={SITE.name}
-            onClick={() => setOpen(false)}
-          >
+          <Link href="/" className="group cursor-pointer" aria-label={SITE.name}>
             <Image
               src="/images/microhair-logo.png"
               alt={SITE.name}
@@ -46,32 +45,39 @@ export default function Navbar() {
               className="h-10 w-auto brightness-0 invert transition-opacity group-hover:opacity-70 md:h-12"
               priority
             />
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-9 lg:flex">
-            {NAV.map((item, i) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="group relative cursor-pointer text-[12.5px] font-medium tracking-wide text-cream-dim transition-colors hover:text-cream"
-              >
-                <span className="num-mono mr-2 text-[10px] text-muted-2">
-                  0{i + 1}
-                </span>
-                {item.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+            {NAV.map((item, i) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group relative cursor-pointer text-[12.5px] font-medium tracking-wide text-cream-dim transition-colors hover:text-cream"
+                >
+                  <span className={`num-mono mr-2 text-[10px] ${active ? "text-gold" : "text-muted-2"}`}>
+                    0{i + 1}
+                  </span>
+                  <span className={active ? "text-cream" : ""}>{item.label}</span>
+                  <span
+                    className={`absolute -bottom-1 left-0 h-px bg-gold transition-all duration-300 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#contatti"
+            <Link
+              href="/contatti"
               className="group hidden cursor-pointer items-center gap-2 rounded-full border border-line bg-surface/40 px-5 py-2.5 text-[12px] font-medium tracking-wide text-cream transition-all hover:border-gold/60 hover:bg-gold hover:text-ink md:flex"
             >
               Prenota Consulenza
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
@@ -83,6 +89,7 @@ export default function Navbar() {
         </div>
       </header>
 
+      {/* Mobile menu overlay */}
       <div
         className={`fixed inset-0 z-40 bg-ink transition-all duration-500 lg:hidden ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
@@ -100,27 +107,29 @@ export default function Navbar() {
             <p className="eyebrow-muted">Naviga</p>
           </div>
           <nav className="flex flex-col gap-1">
-            {NAV.map((item, i) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="group flex items-baseline gap-6 border-b border-line py-4 cursor-pointer"
-                style={{
-                  transitionDelay: `${i * 40}ms`,
-                  transform: open ? "translateY(0)" : "translateY(20px)",
-                  opacity: open ? 1 : 0,
-                  transition: "all 600ms cubic-bezier(0.22, 1, 0.36, 1)",
-                }}
-              >
-                <span className="num-mono text-xs text-muted-2">
-                  0{i + 1}
-                </span>
-                <span className="display text-4xl text-cream transition-colors group-hover:text-gold">
-                  {item.label}
-                </span>
-              </a>
-            ))}
+            {NAV.map((item, i) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group flex items-baseline gap-6 border-b border-line py-4 cursor-pointer"
+                  style={{
+                    transitionDelay: `${i * 40}ms`,
+                    transform: open ? "translateY(0)" : "translateY(20px)",
+                    opacity: open ? 1 : 0,
+                    transition: "all 600ms cubic-bezier(0.22, 1, 0.36, 1)",
+                  }}
+                >
+                  <span className={`num-mono text-xs ${active ? "text-gold" : "text-muted-2"}`}>
+                    0{i + 1}
+                  </span>
+                  <span className={`display text-4xl transition-colors group-hover:text-gold ${active ? "text-gold" : "text-cream"}`}>
+                    {item.label}
+                  </span>
+                </Link>
+              );
+            })}
           </nav>
           <div className="mt-12 flex flex-col gap-3 text-sm text-muted">
             <a href={SITE.phoneLink} className="hover:text-gold">{SITE.phone}</a>
