@@ -288,7 +288,7 @@ function Simulazione() {
 
             <div className="flex flex-col gap-4 md:gap-6">
               <ScrollReveal delay={200}>
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface md:aspect-[21/9]">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
                     src="/images/tecnica-filo-a-filo.jpeg"
                     alt="Tecnica Filo a Filo — prima e dopo"

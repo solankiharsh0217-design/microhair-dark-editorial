@@ -6,6 +6,7 @@ import {
   Star,
   Quote,
   Phone,
+  CheckCircle2,
 } from "lucide-react";
 import { InstagramIcon as Instagram } from "@/components/ui/SocialIcons";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -23,14 +24,20 @@ export const metadata: Metadata = {
     "Atelier di micropigmentazione del cuoio capelluto a Livorno, guidato da Luca Sagona. Risultato naturale, non chirurgico, garantito.",
 };
 
-const whatsappCTA = "Invia le tue foto su WhatsApp — Preventivo in 24h";
-const bookingCTA = "Prenota la tua consulenza gratuita in studio";
+const GALLERY = [
+  { src: "/images/effetto-rasato.jpeg",      label: "Effetto Rasato",      sub: "Norwood V–VI · 3 sedute" },
+  { src: "/images/effetto-densita.jpeg",     label: "Effetto Densità",     sub: "Norwood III–IV · 3 sedute" },
+  { src: "/images/copertura-cicatrici.jpeg", label: "Copertura Cicatrici", sub: "Cicatrice FUT · 3 sedute" },
+  { src: "/images/tecnica-granulata.jpeg",   label: "Tecnica Granulata",   sub: "Diradamento frontale · 3 sedute" },
+  { src: "/images/tecnica-filo-a-filo.jpeg", label: "Tecnica Filo a Filo", sub: "Copertura completa · 3 sedute" },
+] as const;
 
 export default function Home() {
   return (
     <>
       <Hero />
       <RisultatiPreview />
+      <ConversionStrip />
       <Problema />
       <StatsRow />
       <Testimonianze />
@@ -82,27 +89,28 @@ function Hero() {
               <em className="italic text-gold">calvizie, diradamento e cicatrici</em>.
               Restituisco un&apos;immagine naturale, follicolo per follicolo.
             </p>
-            <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
               <a
                 href={SITE.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-gold px-6 py-4 text-sm font-semibold tracking-wide text-ink transition-all hover:bg-cream sm:px-8 sm:py-5"
+                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-[#25D366] px-6 py-4 text-sm font-semibold tracking-wide text-white transition-all hover:bg-[#1ebe5a] sm:px-8 sm:py-5"
               >
                 <span className="sm:hidden">Preventivo gratuito su WhatsApp</span>
-                <span className="hidden sm:inline">{whatsappCTA}</span>
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink text-gold transition-transform group-hover:rotate-45">
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </span>
+                <span className="hidden sm:inline">Invia le tue foto — preventivo in 24h</span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </a>
               <a
                 href={SITE.phoneLink}
                 className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-cream/30 bg-ink/40 px-6 py-4 text-sm font-medium tracking-wide text-cream backdrop-blur-md transition-all hover:border-gold hover:text-gold sm:px-8 sm:py-5"
               >
                 <Phone className="h-4 w-4" />
-                {bookingCTA}
+                Consulenza gratuita in studio
               </a>
             </div>
+            <p className="mt-4 text-xs text-muted-2">
+              ✓ Nessun impegno &nbsp;·&nbsp; ✓ Risposta entro 24h &nbsp;·&nbsp; ✓ Consulenza gratuita
+            </p>
           </ScrollReveal>
 
           <ScrollReveal delay={380} className="hidden md:col-span-4 md:col-start-9 md:block md:pt-3">
@@ -131,7 +139,7 @@ function Hero() {
             <div className="flex items-center gap-3 text-[11px] text-cream-dim">
               <Star className="h-3 w-3 fill-gold text-gold" />
               <span className="num-mono text-cream">{SITE.rating}</span>
-              <span className="text-muted-2">/ 5 — {SITE.reviewCount} recensioni</span>
+              <span className="text-muted-2">/ 5 — {SITE.reviewCount} recensioni verificate</span>
               <span className="hidden h-3 w-px bg-cream/20 md:block" />
               <a
                 href={SITE.social.instagram}
@@ -155,16 +163,18 @@ function Hero() {
   );
 }
 
-/* ── RISULTATI PREVIEW ─────────────────────────────────────────────── */
+/* ── RISULTATI PREVIEW — full gallery ─────────────────────────────── */
 
 function RisultatiPreview() {
   return (
     <section className="relative border-b border-line py-12 md:py-20 lg:py-28">
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
+
+        {/* Header */}
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-14 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-7">
             <ScrollReveal>
-              <SectionLabel n="01">Risultati</SectionLabel>
+              <SectionLabel n="01">Risultati reali</SectionLabel>
               <h2 className="display mt-7 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-7xl">
                 <em className="italic text-gold">Prima</em> e dopo.
                 <br />
@@ -175,75 +185,127 @@ function RisultatiPreview() {
           <div className="flex items-end md:col-span-5 md:justify-end">
             <ScrollReveal delay={150}>
               <p className="max-w-md text-base leading-[1.75] text-cream-dim">
-                Quattro casi reali, fotografati nello studio di Livorno.
-                Risultati con il protocollo MicroHair, in 3 sedute per caso.
+                Cinque procedure reali, fotografate nello studio di Livorno.
+                Ogni risultato è ottenuto in 3 sedute con il protocollo MicroHair.
               </p>
             </ScrollReveal>
           </div>
         </div>
 
-        {/* 2-card preview */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <ScrollReveal>
-            <article className="group cursor-pointer">
-              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                <Image
-                  src="/images/effetto-rasato.jpeg"
-                  alt="Effetto Rasato — prima e dopo"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
-                <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                <div className="absolute left-6 top-6">
-                  <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 01</p>
+        {/* Row 1 — 2 large images */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
+          {GALLERY.slice(0, 2).map((item, i) => (
+            <ScrollReveal key={item.src} delay={i * 80}>
+              <article className="group cursor-pointer">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                  <Image
+                    src={item.src}
+                    alt={`${item.label} — prima e dopo`}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                  <div className="absolute left-5 top-5">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 1}</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                    <h3 className="display text-xl text-cream md:text-3xl">{item.label}</h3>
+                    <p className="mt-1 text-xs text-cream-dim">{item.sub}</p>
+                  </div>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <h3 className="display text-2xl text-cream md:text-4xl">Effetto Rasato</h3>
-                  <p className="mt-2 text-xs text-cream-dim">Norwood V — VI · 3 sedute</p>
-                </div>
-              </div>
-            </article>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100}>
-            <article className="group cursor-pointer">
-              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                <Image
-                  src="/images/effetto-densita.jpeg"
-                  alt="Effetto Densità — prima e dopo"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
-                <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                <div className="absolute left-6 top-6">
-                  <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 02</p>
-                </div>
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <h3 className="display text-2xl text-cream md:text-4xl">Effetto Densità</h3>
-                  <p className="mt-2 text-xs text-cream-dim">Norwood III — IV · 3 sedute</p>
-                </div>
-              </div>
-            </article>
-          </ScrollReveal>
+              </article>
+            </ScrollReveal>
+          ))}
         </div>
 
-        <ScrollReveal delay={200}>
-          <div className="mt-10 flex justify-center border-t border-line pt-10">
-            <Link
-              href="/risultati"
-              className="group inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-gold"
-            >
-              <span className="border-b border-gold/40 pb-0.5 transition-colors group-hover:border-gold">
-                Vedi tutti i casi — galleria completa
-              </span>
-              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+        {/* Row 2 — 3 smaller images */}
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
+          {GALLERY.slice(2).map((item, i) => (
+            <ScrollReveal key={item.src} delay={(i + 2) * 80}>
+              <article className="group cursor-pointer">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                  <Image
+                    src={item.src}
+                    alt={`${item.label} — prima e dopo`}
+                    fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                  <div className="absolute left-4 top-4">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 3}</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                    <h3 className="display text-lg text-cream md:text-2xl">{item.label}</h3>
+                    <p className="mt-1 text-[11px] text-cream-dim">{item.sub}</p>
+                  </div>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <ScrollReveal delay={300}>
+          <div className="mt-10 flex flex-col items-center gap-4 border-t border-line pt-10 sm:flex-row sm:justify-between">
+            <p className="text-sm text-cream-dim">
+              Vuoi vedere il tuo risultato prima di decidere?
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <a
+                href={SITE.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-xs font-semibold tracking-wide text-white transition-all hover:bg-[#1ebe5a]"
+              >
+                Invia le tue foto — simulazione gratuita
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:rotate-45" />
+              </a>
+              <Link
+                href="/risultati"
+                className="group inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-gold/40 px-6 py-3 text-xs font-medium text-gold transition-all hover:border-gold"
+              >
+                Galleria completa
+                <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
           </div>
         </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+/* ── CONVERSION STRIP ──────────────────────────────────────────────── */
+
+function ConversionStrip() {
+  return (
+    <section className="border-b border-line bg-gold/[0.06] py-8 md:py-10">
+      <div className="mx-auto max-w-[1500px] px-5 md:px-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+            {[
+              "600+ clienti trattati",
+              "Consulenza iniziale gratuita",
+              "Risposta garantita in 24h",
+            ].map((t) => (
+              <span key={t} className="flex items-center gap-2 text-sm text-cream-dim">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-gold" />
+                {t}
+              </span>
+            ))}
+          </div>
+          <a
+            href={SITE.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex cursor-pointer items-center justify-center gap-2 self-start rounded-full bg-gold px-6 py-3 text-xs font-semibold tracking-wider text-ink uppercase transition-all hover:bg-cream sm:self-auto"
+          >
+            Prenota la consulenza gratuita
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:rotate-45" />
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -413,42 +475,63 @@ function HomeCTA() {
       <div className="relative mx-auto max-w-[1500px] px-5 md:px-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
           <ScrollReveal className="md:col-span-7">
-            <p className="eyebrow">— Inizia da qui</p>
+            <p className="eyebrow">— Inizia oggi</p>
             <h2 className="display mt-6 text-4xl leading-[0.95] text-cream sm:text-5xl md:text-6xl">
               La prima consulenza
               <br />
               <em className="italic text-gold">è sempre gratuita.</em>
             </h2>
             <p className="mt-8 max-w-xl text-base leading-[1.75] text-cream-dim">
-              Senza impegno, senza pressione. Scrivici su WhatsApp o compila
-              il modulo e ti ricontattiamo entro 24 ore.
+              Senza impegno, senza pressione. Scrivici su WhatsApp con le tue
+              foto e ricevi una valutazione personalizzata entro 24 ore.
             </p>
+            <ul className="mt-8 space-y-2">
+              {[
+                "Consulenza gratuita e senza impegno",
+                "Preventivo personalizzato in 24h",
+                "Simulazione gratuita del risultato",
+              ].map((t) => (
+                <li key={t} className="flex items-center gap-3 text-sm text-cream-dim">
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-gold" />
+                  {t}
+                </li>
+              ))}
+            </ul>
           </ScrollReveal>
 
           <ScrollReveal delay={150} className="flex items-center md:col-span-5">
-            <div className="flex w-full flex-col gap-4">
+            <div className="flex w-full flex-col gap-3">
               <a
                 href={SITE.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-[#25D366] px-7 py-4 text-sm font-semibold tracking-wide text-white transition-all hover:bg-[#1ebe5a]"
+                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full bg-[#25D366] px-7 py-5 text-sm font-semibold tracking-wide text-white transition-all hover:bg-[#1ebe5a]"
               >
                 Scrivici su WhatsApp
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </a>
+              <a
+                href={SITE.phoneLink}
+                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-cream/30 bg-transparent px-7 py-4 text-sm font-medium tracking-wide text-cream transition-all hover:border-gold hover:text-gold"
+              >
+                <Phone className="h-4 w-4" />
+                {SITE.phone}
+              </a>
               <Link
                 href="/contatti"
-                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gold/40 px-7 py-4 text-sm font-semibold tracking-wide text-cream transition-all hover:border-gold hover:bg-gold/5"
+                className="group inline-flex cursor-pointer items-center justify-center gap-3 rounded-full border border-gold/40 px-7 py-4 text-sm font-medium tracking-wide text-cream transition-all hover:border-gold hover:bg-gold/5"
               >
                 Prenota via modulo
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:rotate-45" />
               </Link>
-              <Link
-                href="/prezzi"
-                className="text-center text-xs font-medium text-gold underline-offset-4 hover:underline"
-              >
-                Vedi i prezzi →
-              </Link>
+              <div className="mt-1 flex items-center justify-center gap-6 border-t border-line pt-4">
+                <Link href="/prezzi" className="text-xs font-medium text-gold underline-offset-4 hover:underline">
+                  Vedi i prezzi →
+                </Link>
+                <Link href="/risultati" className="text-xs font-medium text-cream-dim underline-offset-4 hover:underline hover:text-gold">
+                  Galleria risultati →
+                </Link>
+              </div>
             </div>
           </ScrollReveal>
         </div>

@@ -45,13 +45,13 @@ function Eccellenza() {
 
         <div className="mt-10 grid grid-cols-1 items-stretch gap-6 md:mt-16 md:grid-cols-2 md:gap-10">
           <ScrollReveal>
-            <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
+            <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
               <Image
                 src="/images/tecnica-granulata.jpeg"
                 alt="Tecnica Granulata MicroHair — risultato del trattamento"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
               <div className="absolute left-6 top-6">
@@ -69,13 +69,13 @@ function Eccellenza() {
           </ScrollReveal>
 
           <ScrollReveal delay={150}>
-            <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
+            <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
               <Image
                 src="/images/atelier-context.jpg"
                 alt="L'atelier MicroHair — Livorno"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
               <div className="absolute left-6 top-6">

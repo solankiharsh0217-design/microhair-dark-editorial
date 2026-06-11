@@ -57,13 +57,13 @@ function Metodo() {
 
         <div className="mt-12 grid grid-cols-1 items-center gap-8 md:mt-20 md:grid-cols-12 md:gap-16">
           <ScrollReveal className="md:col-span-6">
-            <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
+            <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
               <Image
                 src="/images/tecnica-filo-a-filo.jpeg"
                 alt="Tecnica Filo a Filo — risultato prima e dopo"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
               <div className="absolute left-6 top-6">
@@ -110,13 +110,13 @@ function Metodo() {
 
         <div className="mt-12 grid grid-cols-1 items-center gap-8 border-t border-line pt-12 md:mt-24 md:grid-cols-12 md:gap-16 md:pt-20">
           <ScrollReveal className="md:col-span-6 md:order-2">
-            <div className="relative aspect-[4/3] overflow-hidden border border-line bg-surface">
+            <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
               <Image
                 src="/images/effetto-rasato.jpeg"
                 alt="Effetto Rasato — prima e dopo"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover object-top"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               <div className="absolute left-6 top-6">
