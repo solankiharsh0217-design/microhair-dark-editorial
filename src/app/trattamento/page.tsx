@@ -260,6 +260,22 @@ function Processo() {
           </div>
         </div>
 
+        <ScrollReveal>
+          <div className="relative mb-10 aspect-[16/9] overflow-hidden border border-line bg-surface md:mb-16">
+            <Image
+              src="/images/treatment-detail.png"
+              alt="Trattamento SMP in corso — micropigmentazione cuoio capelluto"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
+            <div className="absolute bottom-5 left-6">
+              <p className="num-mono text-[10px] tracking-[0.3em] text-gold">IL TRATTAMENTO · IN CORSO</p>
+            </div>
+          </div>
+        </ScrollReveal>
+
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           {PROCESS.map((p, i) => (
             <ScrollReveal key={p.n} delay={i * 100}>

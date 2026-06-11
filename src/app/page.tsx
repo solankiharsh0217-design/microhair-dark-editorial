@@ -30,6 +30,9 @@ const GALLERY = [
   { src: "/images/copertura-cicatrici.jpeg", label: "Copertura Cicatrici", sub: "Cicatrice FUT · 3 sedute" },
   { src: "/images/tecnica-granulata.jpeg",   label: "Tecnica Granulata",   sub: "Diradamento frontale · 3 sedute" },
   { src: "/images/tecnica-filo-a-filo.jpeg", label: "Tecnica Filo a Filo", sub: "Copertura completa · 3 sedute" },
+  { src: "/images/case-1.png",               label: "Vista Superiore",     sub: "Norwood VI · 3 sedute" },
+  { src: "/images/case-2.png",               label: "Attaccatura Ridisegnata", sub: "Norwood V · 3 sedute" },
+  { src: "/images/case-3.png",               label: "Densità Completa",    sub: "Norwood IV · 3 sedute" },
 ] as const;
 
 export default function Home() {
@@ -195,7 +198,7 @@ function RisultatiPreview() {
         {/* Row 1 — 2 large images */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
           {GALLERY.slice(0, 2).map((item, i) => (
-            <ScrollReveal key={item.src} delay={i * 80}>
+            <ScrollReveal key={item.src} delay={i * 60}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
@@ -219,10 +222,10 @@ function RisultatiPreview() {
           ))}
         </div>
 
-        {/* Row 2 — 3 smaller images */}
+        {/* Row 2 — 3 medium images */}
         <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
-          {GALLERY.slice(2).map((item, i) => (
-            <ScrollReveal key={item.src} delay={(i + 2) * 80}>
+          {GALLERY.slice(2, 5).map((item, i) => (
+            <ScrollReveal key={item.src} delay={(i + 2) * 60}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
@@ -235,6 +238,33 @@ function RisultatiPreview() {
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                   <div className="absolute left-4 top-4">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 3}</p>
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                    <h3 className="display text-lg text-cream md:text-2xl">{item.label}</h3>
+                    <p className="mt-1 text-[11px] text-cream-dim">{item.sub}</p>
+                  </div>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Row 3 — 3 additional images */}
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
+          {GALLERY.slice(5).map((item, i) => (
+            <ScrollReveal key={item.src} delay={(i + 5) * 60}>
+              <article className="group cursor-pointer">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                  <Image
+                    src={item.src}
+                    alt={`${item.label} — prima e dopo`}
+                    fill
+                    sizes="(min-width: 640px) 33vw, 100vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                  <div className="absolute left-4 top-4">
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 6}</p>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h3 className="display text-lg text-cream md:text-2xl">{item.label}</h3>

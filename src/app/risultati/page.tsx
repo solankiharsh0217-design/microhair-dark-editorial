@@ -56,6 +56,30 @@ const CASES = [
     sub: "Diradamento frontale · 3 sedute",
     detail: "Effetto naturale follicolo per follicolo",
   },
+  {
+    n: "05",
+    src: "/images/case-1.png",
+    alt: "Vista Superiore — prima e dopo",
+    title: "Vista Superiore",
+    sub: "Norwood VI · 3 sedute",
+    detail: "Ricostruzione corona e vertex",
+  },
+  {
+    n: "06",
+    src: "/images/case-2.png",
+    alt: "Attaccatura Ridisegnata — prima e dopo",
+    title: "Attaccatura Ridisegnata",
+    sub: "Norwood V · 3 sedute",
+    detail: "Definizione attaccatura frontale",
+  },
+  {
+    n: "07",
+    src: "/images/case-3.png",
+    alt: "Densità Completa — prima e dopo",
+    title: "Densità Completa",
+    sub: "Norwood IV · 3 sedute",
+    detail: "Uniformità colore su tutta l'area",
+  },
 ] as const;
 
 function Risultati() {
@@ -94,112 +118,65 @@ function Risultati() {
           </div>
         </div>
 
-        {/* Mobile: single column stack | Desktop: masonry-style 2-col */}
-        <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
-          {/* Left column */}
-          <div className="flex flex-col gap-4 md:w-5/12 md:shrink-0 md:gap-6">
-            {/* CASO 01 */}
-            <ScrollReveal>
+        {/* Row 1 — 2 large images */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6">
+          {CASES.slice(0, 2).map((c, i) => (
+            <ScrollReveal key={c.n} delay={i * 80}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image
-                    src={CASES[0].src}
-                    alt={CASES[0].alt}
-                    fill
-                    sizes="(min-width: 768px) 42vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
+                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-6 top-6">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[0].n}</p>
-                  </div>
+                  <div className="absolute left-6 top-6"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
-                    <h2 className="display text-xl text-cream md:text-4xl">{CASES[0].title}</h2>
-                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{CASES[0].sub}</p>
-                    <p className="mt-1 text-[11px] text-muted-2">{CASES[0].detail}</p>
+                    <h2 className="display text-xl text-cream md:text-4xl">{c.title}</h2>
+                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{c.sub}</p>
+                    <p className="mt-1 text-[11px] text-muted-2">{c.detail}</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
+          ))}
+        </div>
 
-            {/* CASO 04 */}
-            <ScrollReveal delay={120}>
+        {/* Row 2 — 3 medium images */}
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
+          {CASES.slice(2, 5).map((c, i) => (
+            <ScrollReveal key={c.n} delay={(i + 2) * 80}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image
-                    src={CASES[3].src}
-                    alt={CASES[3].alt}
-                    fill
-                    sizes="(min-width: 768px) 42vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
+                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-5 top-4">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[3].n}</p>
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <h2 className="display text-xl text-cream md:text-2xl">{CASES[3].title}</h2>
-                    <p className="mt-1 text-[11px] text-cream-dim">{CASES[3].sub}</p>
+                  <div className="absolute left-5 top-4"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                    <h2 className="display text-lg text-cream md:text-2xl">{c.title}</h2>
+                    <p className="mt-1 text-[11px] text-cream-dim">{c.sub}</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
-          </div>
+          ))}
+        </div>
 
-          {/* Right column */}
-          <div className="flex flex-col gap-4 md:flex-1 md:gap-6">
-            {/* CASO 02 */}
-            <ScrollReveal delay={80}>
+        {/* Row 3 — remaining images */}
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
+          {CASES.slice(5).map((c, i) => (
+            <ScrollReveal key={c.n} delay={(i + 5) * 80}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image
-                    src={CASES[1].src}
-                    alt={CASES[1].alt}
-                    fill
-                    sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
+                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-6 top-5">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[1].n}</p>
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                    <h2 className="display text-xl text-cream md:text-3xl">{CASES[1].title}</h2>
-                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{CASES[1].sub}</p>
-                    <p className="mt-0.5 text-[11px] text-muted-2">{CASES[1].detail}</p>
+                  <div className="absolute left-5 top-4"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
+                  <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                    <h2 className="display text-lg text-cream md:text-2xl">{c.title}</h2>
+                    <p className="mt-1 text-[11px] text-cream-dim">{c.sub}</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
-
-            {/* CASO 03 */}
-            <ScrollReveal delay={160}>
-              <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image
-                    src={CASES[2].src}
-                    alt={CASES[2].alt}
-                    fill
-                    sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-6 top-5">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[2].n}</p>
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                    <h2 className="display text-xl text-cream md:text-3xl">{CASES[2].title}</h2>
-                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{CASES[2].sub}</p>
-                    <p className="mt-0.5 text-[11px] text-muted-2">{CASES[2].detail}</p>
-                  </div>
-                </div>
-              </article>
-            </ScrollReveal>
-          </div>
+          ))}
         </div>
 
         <ScrollReveal delay={250}>
