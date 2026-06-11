@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
-import PriceTier from "@/components/ui/PriceTier";
 import { SITE, PRICING_TIERS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `Prezzi — ${SITE.name} | Quanto costa la Micropigmentazione?`,
   description:
-    "Prezzi della micropigmentazione del cuoio capelluto a Livorno. Quattro livelli di trattamento da €900 a €2.600. Pagamento rateizzabile senza interessi.",
+    "Prezzi della micropigmentazione del cuoio capelluto a Livorno. Quattro livelli di trattamento da €600 a €2.000. Pagamento rateizzabile senza interessi.",
 };
 
 export default function PrezziPage() {
@@ -22,6 +22,8 @@ function Investimento() {
       className="relative py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
+
+        {/* Header */}
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
@@ -39,29 +41,65 @@ function Investimento() {
             <ScrollReveal delay={150}>
               <p className="max-w-md text-base leading-[1.75] text-cream-dim">
                 I prezzi variano in base al livello di calvizie e alle aree da
-                trattare. Ecco una stima orientativa per il trattamento completo
-                (3 sedute).
+                trattare. I prezzi si riferiscono al trattamento completo (3 sedute).
               </p>
             </ScrollReveal>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+        {/* TDS-style diagram cards */}
+        <div className="grid grid-cols-1 gap-0 border border-line sm:grid-cols-2 lg:grid-cols-4">
           {PRICING_TIERS.map((t, i) => (
             <ScrollReveal key={t.n} delay={i * 80}>
-              <PriceTier
-                n={t.n}
-                name={t.name}
-                level={t.level}
-                range={t.range}
-                highlight={i === 2}
-              />
+              <article
+                className={`group flex h-full flex-col border-line transition-all hover:bg-gold/[0.04] ${
+                  i < PRICING_TIERS.length - 1 ? "border-b sm:border-b-0 sm:border-r" : ""
+                }`}
+              >
+                {/* Level header */}
+                <div className="border-b border-line px-6 py-5 text-center">
+                  <p className="num-mono text-xs font-semibold tracking-[0.3em] text-cream">
+                    {t.name}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <div className="border-b border-line px-6 py-4 text-center">
+                  <p className="text-sm leading-snug text-cream-dim">{t.level}</p>
+                </div>
+
+                {/* Diagram */}
+                <div className="flex flex-1 items-center justify-center px-8 py-8">
+                  <div className="relative w-full max-w-[200px] aspect-square">
+                    <Image
+                      src={t.image}
+                      alt={`${t.name} — ${t.level}`}
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-contain invert opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                </div>
+
+                {/* Price */}
+                <div className="border-t border-line px-6 py-5 text-center">
+                  <p className="display text-2xl text-gold md:text-3xl">{t.range}</p>
+                </div>
+              </article>
             </ScrollReveal>
           ))}
         </div>
 
+        {/* Footer note */}
+        <ScrollReveal delay={200}>
+          <p className="mt-5 text-center num-mono text-[11px] tracking-widest text-muted-2 uppercase">
+            I prezzi si riferiscono al trattamento completo (3 sedute)
+          </p>
+        </ScrollReveal>
+
+        {/* Installment section */}
         <ScrollReveal delay={150}>
-          <div className="mt-10 border-t border-line pt-10">
+          <div className="mt-16 border-t border-line pt-12">
             <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-12">
               <div className="md:col-span-7">
                 <p className="eyebrow-muted">— Pagamenti flessibili</p>

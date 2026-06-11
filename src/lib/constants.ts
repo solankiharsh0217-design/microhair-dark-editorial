@@ -10,8 +10,8 @@ export const SITE = {
   whatsappDisplay: "+39 351 555 8821",
   email: "info@microhair.it",
   emailLink: "mailto:info@microhair.it",
-  address: "Piazza del Cisternone, 12 — 57100 Livorno (LI), Italia",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Piazza+del+Cisternone+Livorno",
+  address: "Via Giuseppe Garibaldi 205/207 — 57122 Livorno (LI), Italia",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Via+Giuseppe+Garibaldi+205+57122+Livorno",
   rating: "4.8",
   reviewCount: "200+",
   hours: "Lun — Ven · 09:30 — 19:00 · Sab su appuntamento",
@@ -45,7 +45,7 @@ export const BENEFITS = [
   {
     icon: "spark" as const,
     title: "Risultati immediati e duraturi",
-    body: "Effetto rasato credibile già dalla prima seduta. Il risultato si costruisce in 2-3 sedute e si mantiene per anni.",
+    body: "Effetto rasato credibile già dalla prima seduta. Il risultato si costruisce in 3 sedute e si mantiene per anni.",
   },
   {
     icon: "clock" as const,
@@ -95,59 +95,59 @@ export const PROCESS = [
 
 export const SOLUTIONS = [
   {
-    src: "/images/case-1.png",
+    src: "/images/effetto-rasato.jpeg",
     badge: "Calvizie avanzata",
     title: "Effetto Rasato",
     body: "Per simulare una rasatura uniforme, naturale e curata. Ideale nei casi di calvizie estesa: ricrea l'aspetto del bulbo con effetto realistico.",
   },
   {
-    src: "/images/case-2.png",
+    src: "/images/effetto-densita.jpeg",
     badge: "Diradamento",
     title: "Effetto Densità",
     body: "Per infoltire le zone meno piene, migliorare la copertura visiva e rendere la capigliatura più omogenea su tutta l'area.",
   },
   {
-    src: "/images/case-3.png",
+    src: "/images/copertura-cicatrici.jpeg",
     badge: "Cicatrici",
     title: "Copertura Cicatrici",
     body: "Per mascherare cicatrici da trapianto FUT/FUE o traumi, uniformando il colore del cuoio capelluto al resto della testa.",
   },
   {
-    src: "/images/transformation-1.png",
+    src: "/images/tecnica-granulata.jpeg",
     badge: "Post-trapianto",
-    title: "Perfezionamento",
+    title: "Tecnica Granulata",
     body: "Per uniformare la densità e migliorare l'aspetto complessivo dopo un autotrapianto. Più omogeneità e naturalezza.",
   },
 ] as const;
 
 export const PRICING_TIERS = [
   {
-    n: "I",
-    name: "Effetto Rasato",
-    level: "Aree parzialmente diradate",
-    range: "€ 900 — € 1.200",
-    image: "/images/case-1.png",
-  },
-  {
-    n: "II",
-    name: "Effetto Densità",
-    level: "Diradamento esteso",
-    range: "€ 1.200 — € 1.800",
-    image: "/images/case-2.png",
-  },
-  {
-    n: "III",
-    name: "Copertura Cicatrici",
-    level: "Cicatrici da trapianto o traumi",
-    range: "€ 1.500 — € 2.200",
-    image: "/images/case-3.png",
-  },
-  {
     n: "IV",
-    name: "Perfezionamento Post-Trapianto",
+    name: "LIVELLO IV",
+    level: "Aree parzialmente diradate",
+    range: "€ 600 — € 900",
+    image: "/images/level-4.png",
+  },
+  {
+    n: "V",
+    name: "LIVELLO V",
+    level: "Calvizie più estese",
+    range: "€ 900 — € 1.300",
+    image: "/images/level-5.png",
+  },
+  {
+    n: "VI",
+    name: "LIVELLO VI",
+    level: "Area superiore e parte occipitale",
+    range: "€ 1.300 — € 1.700",
+    image: "/images/level-6.png",
+  },
+  {
+    n: "VII",
+    name: "LIVELLO VII",
     level: "Calvizie avanzata e completa",
-    range: "€ 2.200 — € 2.600",
-    image: "/images/transformation-1.png",
+    range: "€ 1.700 — € 2.000",
+    image: "/images/level-7.png",
   },
 ] as const;
 
@@ -155,7 +155,7 @@ export const PILLARS = [
   {
     n: "01",
     title: "Non Chirurgico",
-    body: "Nessun bisturi, nessun trapianto. La SMP riproduce il follicolo con pigmenti bio-assorbibili, in sole 2-3 sedute.",
+    body: "Nessun bisturi, nessun trapianto. La SMP riproduce il follicolo con pigmenti bio-assorbibili, in sole 3 sedute.",
   },
   {
     n: "02",

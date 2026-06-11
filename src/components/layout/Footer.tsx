@@ -69,7 +69,7 @@ export default function Footer() {
                 <li className="flex items-start gap-2">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <a href={SITE.mapsUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cream">
-                    Livorno — Piazza del Cisternone 12
+                    Via Giuseppe Garibaldi 205/207 — Livorno
                   </a>
                 </li>
                 <li className="flex items-start gap-2">

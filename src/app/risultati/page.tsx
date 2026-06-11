@@ -23,6 +23,45 @@ export default function RisultatiPage() {
 
 /* ── RISULTATI ─────────────────────────────────────────────────────── */
 
+const CASES = [
+  {
+    n: "01",
+    src: "/images/effetto-rasato.jpeg",
+    alt: "Effetto Rasato — prima e dopo",
+    title: "Effetto Rasato",
+    sub: "Norwood V — VI · 3 sedute",
+    detail: "Ricostruzione completa dell'attaccatura",
+    objectPos: "object-top",
+  },
+  {
+    n: "02",
+    src: "/images/effetto-densita.jpeg",
+    alt: "Effetto Densità — prima e dopo",
+    title: "Effetto Densità",
+    sub: "Norwood III — IV · 3 sedute",
+    detail: "Riempimento corona e vertex",
+    objectPos: "object-center",
+  },
+  {
+    n: "03",
+    src: "/images/copertura-cicatrici.jpeg",
+    alt: "Copertura Cicatrici — prima e dopo",
+    title: "Copertura Cicatrici",
+    sub: "Cicatrice FUT · 3 sedute",
+    detail: "Uniformità colore su tutta l'area",
+    objectPos: "object-center",
+  },
+  {
+    n: "04",
+    src: "/images/tecnica-granulata.jpeg",
+    alt: "Tecnica Granulata — prima e dopo",
+    title: "Tecnica Granulata",
+    sub: "Diradamento frontale · 3 sedute",
+    detail: "Effetto naturale follicolo per follicolo",
+    objectPos: "object-top",
+  },
+] as const;
+
 function Risultati() {
   return (
     <section
@@ -30,6 +69,7 @@ function Risultati() {
       className="relative border-b border-line py-12 md:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-[1500px] px-5 md:px-10">
+        {/* Header */}
         <div className="mb-10 grid grid-cols-1 gap-8 md:mb-16 md:grid-cols-12 md:gap-20">
           <div className="md:col-span-7">
             <ScrollReveal>
@@ -46,7 +86,7 @@ function Risultati() {
               <div className="max-w-md space-y-4">
                 <p className="text-base leading-[1.75] text-cream-dim">
                   Quattro casi reali, fotografati nello studio di Livorno.
-                  Risultati ottenuti con il protocollo MicroHair, in 2–3 sedute
+                  Risultati ottenuti con il protocollo MicroHair, in 3 sedute
                   per caso.
                 </p>
                 <p className="eyebrow-muted text-[10px]">
@@ -58,102 +98,107 @@ function Risultati() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-8">
-          {/* Left: transformation-1 (portrait) + case-1 (wide) */}
-          <div className="flex flex-col gap-6 md:w-5/12 md:shrink-0">
+        {/* Mobile: single column stack | Desktop: masonry-style 2-col */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+          {/* Left column */}
+          <div className="flex flex-col gap-4 md:w-5/12 md:shrink-0 md:gap-6">
+            {/* CASO 01 — portrait aspect on desktop */}
             <ScrollReveal>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[3/4] overflow-hidden border border-line bg-surface">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface md:aspect-[3/4]">
                   <Image
-                    src="/images/transformation-1.png"
-                    alt="Stempiatura Avanzata — prima e dopo"
+                    src={CASES[0].src}
+                    alt={CASES[0].alt}
                     fill
                     sizes="(min-width: 768px) 42vw, 100vw"
-                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
+                    className={`object-cover ${CASES[0].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-6 top-6">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 01</p>
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[0].n}</p>
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                    <h2 className="display text-2xl text-cream md:text-4xl">Stempiatura Avanzata</h2>
-                    <p className="mt-2 text-xs text-cream-dim md:text-sm">Norwood V — VI · 3 sedute</p>
-                    <p className="mt-1 text-[11px] text-muted-2">Frontale + Vertex · ricostruzione completa</p>
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
+                    <h2 className="display text-xl text-cream md:text-4xl">{CASES[0].title}</h2>
+                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{CASES[0].sub}</p>
+                    <p className="mt-1 text-[11px] text-muted-2">{CASES[0].detail}</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
 
+            {/* CASO 04 — wide aspect */}
             <ScrollReveal delay={120}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[21/9] overflow-hidden border border-line bg-surface">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface md:aspect-[21/9]">
                   <Image
-                    src="/images/case-1.png"
-                    alt="Effetto Rasato — prima e dopo"
+                    src={CASES[3].src}
+                    alt={CASES[3].alt}
                     fill
                     sizes="(min-width: 768px) 42vw, 100vw"
-                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
+                    className={`object-cover ${CASES[3].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-5 top-4">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 04</p>
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[3].n}</p>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-5">
-                    <h2 className="display text-xl text-cream md:text-2xl">Effetto Rasato</h2>
-                    <p className="mt-1 text-[11px] text-cream-dim">Norwood IV — V · 2 sedute</p>
+                    <h2 className="display text-xl text-cream md:text-2xl">{CASES[3].title}</h2>
+                    <p className="mt-1 text-[11px] text-cream-dim">{CASES[3].sub}</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
           </div>
 
-          {/* Right: case-2 + case-3 stacked */}
-          <div className="flex flex-col gap-6 md:flex-1">
+          {/* Right column */}
+          <div className="flex flex-col gap-4 md:flex-1 md:gap-6">
+            {/* CASO 02 */}
             <ScrollReveal delay={80}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
-                    src="/images/case-2.png"
-                    alt="Copertura Vertex — prima e dopo"
+                    src={CASES[1].src}
+                    alt={CASES[1].alt}
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
+                    className={`object-cover ${CASES[1].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-6 top-5">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 02</p>
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[1].n}</p>
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <h2 className="display text-xl text-cream md:text-3xl">Copertura Vertex</h2>
-                    <p className="mt-1 text-xs text-cream-dim md:text-sm">Norwood III — IV · 2 sedute</p>
-                    <p className="mt-0.5 text-[11px] text-muted-2">Riempimento crown area</p>
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                    <h2 className="display text-xl text-cream md:text-3xl">{CASES[1].title}</h2>
+                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{CASES[1].sub}</p>
+                    <p className="mt-0.5 text-[11px] text-muted-2">{CASES[1].detail}</p>
                   </div>
                 </div>
               </article>
             </ScrollReveal>
 
+            {/* CASO 03 */}
             <ScrollReveal delay={160}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
-                    src="/images/case-3.png"
-                    alt="Densità Post-Trapianto — prima e dopo"
+                    src={CASES[2].src}
+                    alt={CASES[2].alt}
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
+                    className={`object-cover ${CASES[2].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute left-6 top-5">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 03</p>
+                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {CASES[2].n}</p>
                   </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <h2 className="display text-xl text-cream md:text-3xl">Densità Post-Trapianto</h2>
-                    <p className="mt-1 text-xs text-cream-dim md:text-sm">Trapianto pregresso · 3 sedute</p>
-                    <p className="mt-0.5 text-[11px] text-muted-2">Aumento densità visiva</p>
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                    <h2 className="display text-xl text-cream md:text-3xl">{CASES[2].title}</h2>
+                    <p className="mt-1 text-xs text-cream-dim md:text-sm">{CASES[2].sub}</p>
+                    <p className="mt-0.5 text-[11px] text-muted-2">{CASES[2].detail}</p>
                   </div>
                 </div>
               </article>
@@ -162,7 +207,7 @@ function Risultati() {
         </div>
 
         <ScrollReveal delay={250}>
-          <div className="mt-16 flex flex-col items-center gap-6 border-t border-line pt-12">
+          <div className="mt-12 flex flex-col items-center gap-6 border-t border-line pt-10 md:mt-16">
             <p className="text-center text-base text-cream-dim">
               Vuoi vedere come potresti apparire? Inviaci le tue foto.
             </p>
@@ -247,41 +292,41 @@ function Simulazione() {
 
             <div className="flex flex-col gap-4 md:gap-6">
               <ScrollReveal delay={200}>
-                <div className="relative aspect-[21/9] overflow-hidden border border-line bg-surface">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface md:aspect-[21/9]">
                   <Image
-                    src="/images/case-1.png"
-                    alt="Risultato SMP — effetto rasato prima e dopo"
+                    src="/images/tecnica-filo-a-filo.jpeg"
+                    alt="Tecnica Filo a Filo — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover saturate-[0.55] brightness-90"
+                    className="object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-5">
-                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Caso A · Effetto Rasato</p>
+                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Tecnica Filo a Filo · Prima e Dopo</p>
                   </div>
                 </div>
               </ScrollReveal>
               <ScrollReveal delay={300}>
                 <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
-                    src="/images/case-2.png"
-                    alt="Risultato SMP — densità vertex prima e dopo"
+                    src="/images/effetto-densita.jpeg"
+                    alt="Effetto Densità — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover saturate-[0.55] brightness-90"
+                    className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-5">
-                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Caso B · Copertura Vertex</p>
+                    <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Effetto Densità · Prima e Dopo</p>
                   </div>
                 </div>
               </ScrollReveal>
             </div>
 
             <ScrollReveal delay={400}>
-              <div className="mt-10 border-l-2 border-gold/50 bg-gold/5 p-6 md:p-8">
+              <div className="mt-8 border-l-2 border-gold/50 bg-gold/5 p-6 md:mt-10 md:p-8">
                 <Quote className="h-5 w-5 text-gold" />
                 <p className="display mt-4 text-xl italic text-cream md:text-2xl">
                   &quot;Adesso ho capito che è la scelta giusta.&quot;

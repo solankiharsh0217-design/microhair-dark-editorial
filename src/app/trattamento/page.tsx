@@ -59,15 +59,15 @@ function Metodo() {
           <ScrollReveal className="md:col-span-6">
             <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
               <Image
-                src="/images/treatment-detail.png"
-                alt="Dettaglio del trattamento SMP — pigmenti e attrezzatura sterile"
+                src="/images/tecnica-filo-a-filo.jpeg"
+                alt="Tecnica Filo a Filo — risultato prima e dopo"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
               <div className="absolute left-6 top-6">
-                <p className="num-mono text-[10px] tracking-[0.3em] text-gold">IN STUDIO · ATTREZZATURA STERILE</p>
+                <p className="num-mono text-[10px] tracking-[0.3em] text-gold">TECNICA · FILO A FILO</p>
               </div>
             </div>
           </ScrollReveal>
@@ -81,7 +81,7 @@ function Metodo() {
             <div className="mt-10 space-y-6 text-base leading-[1.8] text-cream-dim md:text-lg">
               <p>
                 Attraverso uno strumento specifico — il{" "}
-                <em className="italic text-cream">tricografo</em> — e pigmenti
+                <em className="italic text-cream">dermografo</em> — e pigmenti
                 biocompatibili, realizziamo micro-depositi nell&apos;epidermide
                 che rivestono le sezioni follicolari.
               </p>
@@ -112,11 +112,11 @@ function Metodo() {
           <ScrollReveal className="md:col-span-6 md:order-2">
             <div className="relative aspect-[4/3] overflow-hidden border border-line bg-surface">
               <Image
-                src="/images/fade-detail.jpg"
-                alt="Dettaglio sfumatura capelli — effetto rasato naturale"
+                src="/images/effetto-rasato.jpeg"
+                alt="Effetto Rasato — prima e dopo"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               <div className="absolute left-6 top-6">
@@ -137,19 +137,6 @@ function Metodo() {
               o in una cena: il risultato è indistinguibile da una capigliatura
               naturale appena rasata.
             </p>
-            <div className="mt-10 grid grid-cols-2 gap-6">
-              {[
-                { k: "Ago", v: "0.18 mm" },
-                { k: "Profondità", v: "0.5 — 1.2 mm" },
-                { k: "Sedute", v: "2 — 4" },
-                { k: "Distanza tra punti", v: "< 1 mm" },
-              ].map((d) => (
-                <div key={d.k} className="border-t border-line pt-4">
-                  <p className="num-mono text-[10px] tracking-widest text-muted-2">{d.k.toUpperCase()}</p>
-                  <p className="display mt-2 text-2xl text-cream">{d.v}</p>
-                </div>
-              ))}
-            </div>
           </ScrollReveal>
         </div>
       </div>

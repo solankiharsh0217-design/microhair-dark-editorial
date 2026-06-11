@@ -47,11 +47,11 @@ function Eccellenza() {
           <ScrollReveal>
             <div className="relative aspect-[4/5] overflow-hidden border border-line bg-surface">
               <Image
-                src="/images/fade-detail.jpg"
-                alt="Tecnica MicroHair — risultato del trattamento"
+                src="/images/tecnica-granulata.jpeg"
+                alt="Tecnica Granulata MicroHair — risultato del trattamento"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
               <div className="absolute left-6 top-6">

@@ -46,11 +46,11 @@ function Hero() {
     <section className="relative flex min-h-[100svh] items-end overflow-hidden pb-16 md:pb-24">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-portrait.jpg"
+          src="/images/founder.jpeg"
           alt=""
           fill
           sizes="100vw"
-          className="slow-zoom object-cover"
+          className="slow-zoom object-cover object-top"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/40 to-ink" />
@@ -176,7 +176,7 @@ function RisultatiPreview() {
             <ScrollReveal delay={150}>
               <p className="max-w-md text-base leading-[1.75] text-cream-dim">
                 Quattro casi reali, fotografati nello studio di Livorno.
-                Risultati con il protocollo MicroHair, in 2–3 sedute per caso.
+                Risultati con il protocollo MicroHair, in 3 sedute per caso.
               </p>
             </ScrollReveal>
           </div>
@@ -186,13 +186,13 @@ function RisultatiPreview() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <ScrollReveal>
             <article className="group cursor-pointer">
-              <div className="relative aspect-[3/4] overflow-hidden border border-line bg-surface">
+              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface sm:aspect-[3/4]">
                 <Image
-                  src="/images/transformation-1.png"
-                  alt="Stempiatura Avanzata — prima e dopo"
+                  src="/images/effetto-rasato.jpeg"
+                  alt="Effetto Rasato — prima e dopo"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                 <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -200,7 +200,7 @@ function RisultatiPreview() {
                   <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 01</p>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <h3 className="display text-2xl text-cream md:text-4xl">Stempiatura Avanzata</h3>
+                  <h3 className="display text-2xl text-cream md:text-4xl">Effetto Rasato</h3>
                   <p className="mt-2 text-xs text-cream-dim">Norwood V — VI · 3 sedute</p>
                 </div>
               </div>
@@ -209,13 +209,13 @@ function RisultatiPreview() {
 
           <ScrollReveal delay={100}>
             <article className="group cursor-pointer">
-              <div className="relative aspect-[3/4] overflow-hidden border border-line bg-surface">
+              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface sm:aspect-[3/4]">
                 <Image
-                  src="/images/case-2.png"
-                  alt="Copertura Vertex — prima e dopo"
+                  src="/images/effetto-densita.jpeg"
+                  alt="Effetto Densità — prima e dopo"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover saturate-[0.55] brightness-90 transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                 <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -223,8 +223,8 @@ function RisultatiPreview() {
                   <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 02</p>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                  <h3 className="display text-2xl text-cream md:text-4xl">Copertura Vertex</h3>
-                  <p className="mt-2 text-xs text-cream-dim">Norwood III — IV · 2 sedute</p>
+                  <h3 className="display text-2xl text-cream md:text-4xl">Effetto Densità</h3>
+                  <p className="mt-2 text-xs text-cream-dim">Norwood III — IV · 3 sedute</p>
                 </div>
               </div>
             </article>
