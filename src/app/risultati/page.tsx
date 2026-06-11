@@ -31,7 +31,6 @@ const CASES = [
     title: "Effetto Rasato",
     sub: "Norwood V — VI · 3 sedute",
     detail: "Ricostruzione completa dell'attaccatura",
-    objectPos: "object-top",
   },
   {
     n: "02",
@@ -40,7 +39,6 @@ const CASES = [
     title: "Effetto Densità",
     sub: "Norwood III — IV · 3 sedute",
     detail: "Riempimento corona e vertex",
-    objectPos: "object-center",
   },
   {
     n: "03",
@@ -49,7 +47,6 @@ const CASES = [
     title: "Copertura Cicatrici",
     sub: "Cicatrice FUT · 3 sedute",
     detail: "Uniformità colore su tutta l'area",
-    objectPos: "object-center",
   },
   {
     n: "04",
@@ -58,7 +55,6 @@ const CASES = [
     title: "Tecnica Granulata",
     sub: "Diradamento frontale · 3 sedute",
     detail: "Effetto naturale follicolo per follicolo",
-    objectPos: "object-top",
   },
 ] as const;
 
@@ -102,16 +98,16 @@ function Risultati() {
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
           {/* Left column */}
           <div className="flex flex-col gap-4 md:w-5/12 md:shrink-0 md:gap-6">
-            {/* CASO 01 — portrait aspect on desktop */}
+            {/* CASO 01 */}
             <ScrollReveal>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface md:aspect-[3/4]">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
                     src={CASES[0].src}
                     alt={CASES[0].alt}
                     fill
                     sizes="(min-width: 768px) 42vw, 100vw"
-                    className={`object-cover ${CASES[0].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -127,16 +123,16 @@ function Risultati() {
               </article>
             </ScrollReveal>
 
-            {/* CASO 04 — wide aspect */}
+            {/* CASO 04 */}
             <ScrollReveal delay={120}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface md:aspect-[21/9]">
+                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                   <Image
                     src={CASES[3].src}
                     alt={CASES[3].alt}
                     fill
                     sizes="(min-width: 768px) 42vw, 100vw"
-                    className={`object-cover ${CASES[3].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -163,7 +159,7 @@ function Risultati() {
                     alt={CASES[1].alt}
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className={`object-cover ${CASES[1].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -188,7 +184,7 @@ function Risultati() {
                     alt={CASES[2].alt}
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className={`object-cover ${CASES[2].objectPos} transition-transform duration-700 group-hover:scale-[1.03]`}
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -298,7 +294,7 @@ function Simulazione() {
                     alt="Tecnica Filo a Filo — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
                   <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />

@@ -186,13 +186,13 @@ function RisultatiPreview() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <ScrollReveal>
             <article className="group cursor-pointer">
-              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface sm:aspect-[3/4]">
+              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                 <Image
                   src="/images/effetto-rasato.jpeg"
                   alt="Effetto Rasato — prima e dopo"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                 <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
@@ -209,13 +209,13 @@ function RisultatiPreview() {
 
           <ScrollReveal delay={100}>
             <article className="group cursor-pointer">
-              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface sm:aspect-[3/4]">
+              <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
                 <Image
                   src="/images/effetto-densita.jpeg"
                   alt="Effetto Densità — prima e dopo"
                   fill
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
                 <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
