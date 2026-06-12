@@ -24,63 +24,15 @@ export default function RisultatiPage() {
 /* ── RISULTATI ─────────────────────────────────────────────────────── */
 
 const CASES = [
-  {
-    n: "01",
-    src: "/images/effetto-rasato.jpeg",
-    alt: "Effetto Rasato — prima e dopo",
-    title: "Effetto Rasato",
-    sub: "Norwood V — VI · 3 sedute",
-    detail: "Ricostruzione completa dell'attaccatura",
-  },
-  {
-    n: "02",
-    src: "/images/effetto-densita.jpeg",
-    alt: "Effetto Densità — prima e dopo",
-    title: "Effetto Densità",
-    sub: "Norwood III — IV · 3 sedute",
-    detail: "Riempimento corona e vertex",
-  },
-  {
-    n: "03",
-    src: "/images/copertura-cicatrici.jpeg",
-    alt: "Copertura Cicatrici — prima e dopo",
-    title: "Copertura Cicatrici",
-    sub: "Cicatrice FUT · 3 sedute",
-    detail: "Uniformità colore su tutta l'area",
-  },
-  {
-    n: "04",
-    src: "/images/tecnica-granulata.jpeg",
-    alt: "Tecnica Granulata — prima e dopo",
-    title: "Tecnica Granulata",
-    sub: "Diradamento frontale · 3 sedute",
-    detail: "Effetto naturale follicolo per follicolo",
-  },
-  {
-    n: "05",
-    src: "/images/case-1.png",
-    alt: "Vista Superiore — prima e dopo",
-    title: "Vista Superiore",
-    sub: "Norwood VI · 3 sedute",
-    detail: "Ricostruzione corona e vertex",
-  },
-  {
-    n: "06",
-    src: "/images/case-2.png",
-    alt: "Attaccatura Ridisegnata — prima e dopo",
-    title: "Attaccatura Ridisegnata",
-    sub: "Norwood V · 3 sedute",
-    detail: "Definizione attaccatura frontale",
-  },
-  {
-    n: "07",
-    src: "/images/case-3.png",
-    alt: "Densità Completa — prima e dopo",
-    title: "Densità Completa",
-    sub: "Norwood IV · 3 sedute",
-    detail: "Uniformità colore su tutta l'area",
-  },
-] as const;
+  { n: "01", src: "/images/effetto-rasato.jpeg",      alt: "Effetto Rasato — prima e dopo",          title: "Effetto Rasato",          sub: "Norwood V — VI · 3 sedute",      detail: "Ricostruzione completa dell'attaccatura", aspect: "aspect-[3/2]"  },
+  { n: "02", src: "/images/effetto-densita.jpeg",     alt: "Effetto Densità — prima e dopo",          title: "Effetto Densità",         sub: "Norwood III — IV · 3 sedute",    detail: "Riempimento corona e vertex",             aspect: "aspect-[3/2]"  },
+  { n: "03", src: "/images/copertura-cicatrici.jpeg", alt: "Copertura Cicatrici — prima e dopo",      title: "Copertura Cicatrici",     sub: "Cicatrice FUT · 3 sedute",       detail: "Uniformità colore su tutta l'area",       aspect: "aspect-[3/2]"  },
+  { n: "04", src: "/images/tecnica-granulata.jpeg",   alt: "Tecnica Granulata — prima e dopo",        title: "Tecnica Granulata",       sub: "Diradamento frontale · 3 sedute",detail: "Effetto naturale follicolo per follicolo", aspect: "aspect-[3/2]"  },
+  { n: "05", src: "/images/tecnica-filo-a-filo.jpeg", alt: "Tecnica Filo a Filo — prima e dopo",      title: "Tecnica Filo a Filo",     sub: "Copertura completa · 3 sedute",  detail: "Risultato top-down su tutta la testa",    aspect: "aspect-[3/2]"  },
+  { n: "06", src: "/images/case-1.png",               alt: "Vista Superiore — prima e dopo",          title: "Vista Superiore",         sub: "Norwood VI · 3 sedute",          detail: "Ricostruzione corona e vertex",           aspect: "aspect-[21/9]" },
+  { n: "07", src: "/images/case-2.png",               alt: "Attaccatura Ridisegnata — prima e dopo",  title: "Attaccatura Ridisegnata", sub: "Norwood V · 3 sedute",           detail: "Definizione attaccatura frontale",        aspect: "aspect-[7/4]"  },
+  { n: "08", src: "/images/case-3.png",               alt: "Densità Completa — prima e dopo",         title: "Densità Completa",        sub: "Norwood IV · 3 sedute",          detail: "Uniformità colore su tutta l'area",       aspect: "aspect-[7/4]"  },
+];
 
 function Risultati() {
   return (
@@ -123,11 +75,10 @@ function Risultati() {
           {CASES.slice(0, 2).map((c, i) => (
             <ScrollReveal key={c.n} delay={i * 80}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-6 top-6"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
+                <div className={`relative ${c.aspect} overflow-hidden border border-line bg-surface`}>
+                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
+                  <div className="absolute left-6 top-6 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
                     <h2 className="display text-xl text-cream md:text-4xl">{c.title}</h2>
                     <p className="mt-1 text-xs text-cream-dim md:text-sm">{c.sub}</p>
@@ -144,11 +95,10 @@ function Risultati() {
           {CASES.slice(2, 5).map((c, i) => (
             <ScrollReveal key={c.n} delay={(i + 2) * 80}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-5 top-4"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
+                <div className={`relative ${c.aspect} overflow-hidden border border-line bg-surface`}>
+                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                  <div className="absolute left-5 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h2 className="display text-lg text-cream md:text-2xl">{c.title}</h2>
                     <p className="mt-1 text-[11px] text-cream-dim">{c.sub}</p>
@@ -164,11 +114,10 @@ function Risultati() {
           {CASES.slice(5).map((c, i) => (
             <ScrollReveal key={c.n} delay={(i + 5) * 80}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
-                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
-                  <div className="absolute left-5 top-4"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
+                <div className={`relative ${c.aspect} overflow-hidden border border-line bg-surface`}>
+                  <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                  <div className="absolute left-5 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h2 className="display text-lg text-cream md:text-2xl">{c.title}</h2>
                     <p className="mt-1 text-[11px] text-cream-dim">{c.sub}</p>
@@ -271,10 +220,9 @@ function Simulazione() {
                     alt="Tecnica Filo a Filo — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                   <div className="absolute bottom-4 left-5">
                     <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Tecnica Filo a Filo · Prima e Dopo</p>
                   </div>
@@ -287,10 +235,9 @@ function Simulazione() {
                     alt="Effetto Densità — prima e dopo"
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover object-center"
+                    className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/15" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                   <div className="absolute bottom-4 left-5">
                     <p className="num-mono text-[10px] tracking-widest text-gold uppercase">Effetto Densità · Prima e Dopo</p>
                   </div>

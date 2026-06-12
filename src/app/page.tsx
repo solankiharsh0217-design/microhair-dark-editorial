@@ -24,16 +24,18 @@ export const metadata: Metadata = {
     "Atelier di micropigmentazione del cuoio capelluto a Livorno, guidato da Luca Sagona. Risultato naturale, non chirurgico, garantito.",
 };
 
+// aspect: CSS class for the container. Images are 3:2 (effetto/tecnica) or wider (case-*).
+// object-top ensures top-of-image "PRIMA/DOPO" labels are never cropped.
 const GALLERY = [
-  { src: "/images/effetto-rasato.jpeg",      label: "Effetto Rasato",      sub: "Norwood V–VI · 3 sedute" },
-  { src: "/images/effetto-densita.jpeg",     label: "Effetto Densità",     sub: "Norwood III–IV · 3 sedute" },
-  { src: "/images/copertura-cicatrici.jpeg", label: "Copertura Cicatrici", sub: "Cicatrice FUT · 3 sedute" },
-  { src: "/images/tecnica-granulata.jpeg",   label: "Tecnica Granulata",   sub: "Diradamento frontale · 3 sedute" },
-  { src: "/images/tecnica-filo-a-filo.jpeg", label: "Tecnica Filo a Filo", sub: "Copertura completa · 3 sedute" },
-  { src: "/images/case-1.png",               label: "Vista Superiore",     sub: "Norwood VI · 3 sedute" },
-  { src: "/images/case-2.png",               label: "Attaccatura Ridisegnata", sub: "Norwood V · 3 sedute" },
-  { src: "/images/case-3.png",               label: "Densità Completa",    sub: "Norwood IV · 3 sedute" },
-] as const;
+  { src: "/images/effetto-rasato.jpeg",      label: "Effetto Rasato",          sub: "Norwood V–VI · 3 sedute",        aspect: "aspect-[3/2]" },
+  { src: "/images/effetto-densita.jpeg",     label: "Effetto Densità",         sub: "Norwood III–IV · 3 sedute",      aspect: "aspect-[3/2]" },
+  { src: "/images/copertura-cicatrici.jpeg", label: "Copertura Cicatrici",     sub: "Cicatrice FUT · 3 sedute",       aspect: "aspect-[3/2]" },
+  { src: "/images/tecnica-granulata.jpeg",   label: "Tecnica Granulata",       sub: "Diradamento frontale · 3 sedute",aspect: "aspect-[3/2]" },
+  { src: "/images/tecnica-filo-a-filo.jpeg", label: "Tecnica Filo a Filo",     sub: "Copertura completa · 3 sedute",  aspect: "aspect-[3/2]" },
+  { src: "/images/case-1.png",               label: "Vista Superiore",         sub: "Norwood VI · 3 sedute",          aspect: "aspect-[21/9]" },
+  { src: "/images/case-2.png",               label: "Attaccatura Ridisegnata", sub: "Norwood V · 3 sedute",           aspect: "aspect-[7/4]"  },
+  { src: "/images/case-3.png",               label: "Densità Completa",        sub: "Norwood IV · 3 sedute",          aspect: "aspect-[7/4]"  },
+];
 
 export default function Home() {
   return (
@@ -200,16 +202,16 @@ function RisultatiPreview() {
           {GALLERY.slice(0, 2).map((item, i) => (
             <ScrollReveal key={item.src} delay={i * 60}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                <div className={`relative ${item.aspect} overflow-hidden border border-line bg-surface`}>
                   <Image
                     src={item.src}
                     alt={`${item.label} — prima e dopo`}
                     fill
                     sizes="(min-width: 640px) 50vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-5 top-5">
+                  <div className="absolute left-5 top-5 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 1}</p>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
@@ -227,16 +229,16 @@ function RisultatiPreview() {
           {GALLERY.slice(2, 5).map((item, i) => (
             <ScrollReveal key={item.src} delay={(i + 2) * 60}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                <div className={`relative ${item.aspect} overflow-hidden border border-line bg-surface`}>
                   <Image
                     src={item.src}
                     alt={`${item.label} — prima e dopo`}
                     fill
                     sizes="(min-width: 640px) 33vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-4 top-4">
+                  <div className="absolute left-4 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 3}</p>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
@@ -254,16 +256,16 @@ function RisultatiPreview() {
           {GALLERY.slice(5).map((item, i) => (
             <ScrollReveal key={item.src} delay={(i + 5) * 60}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/9] overflow-hidden border border-line bg-surface">
+                <div className={`relative ${item.aspect} overflow-hidden border border-line bg-surface`}>
                   <Image
                     src={item.src}
                     alt={`${item.label} — prima e dopo`}
                     fill
                     sizes="(min-width: 640px) 33vw, 100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-4 top-4">
+                  <div className="absolute left-4 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm">
                     <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 6}</p>
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
