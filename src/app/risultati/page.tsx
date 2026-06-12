@@ -78,7 +78,6 @@ function Risultati() {
                 <div className={`relative ${c.aspect} overflow-hidden border border-line bg-surface`}>
                   <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
-                  <div className="absolute left-6 top-6 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-8">
                     <h2 className="display text-xl text-cream md:text-4xl">{c.title}</h2>
                     <p className="mt-1 text-xs text-cream-dim md:text-sm">{c.sub}</p>
@@ -98,7 +97,6 @@ function Risultati() {
                 <div className={`relative ${c.aspect} overflow-hidden border border-line bg-surface`}>
                   <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-5 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h2 className="display text-lg text-cream md:text-2xl">{c.title}</h2>
                     <p className="mt-1 text-[11px] text-cream-dim">{c.sub}</p>
@@ -117,7 +115,6 @@ function Risultati() {
                 <div className={`relative ${c.aspect} overflow-hidden border border-line bg-surface`}>
                   <Image src={c.src} alt={c.alt} fill sizes="(min-width: 640px) 33vw, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-5 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm"><p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · {c.n}</p></div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h2 className="display text-lg text-cream md:text-2xl">{c.title}</h2>
                     <p className="mt-1 text-[11px] text-cream-dim">{c.sub}</p>

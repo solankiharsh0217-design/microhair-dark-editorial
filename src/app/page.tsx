@@ -211,9 +211,6 @@ function RisultatiPreview() {
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-5 top-5 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 1}</p>
-                  </div>
                   <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
                     <h3 className="display text-xl text-cream md:text-3xl">{item.label}</h3>
                     <p className="mt-1 text-xs text-cream-dim">{item.sub}</p>
@@ -238,9 +235,6 @@ function RisultatiPreview() {
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 3}</p>
-                  </div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h3 className="display text-lg text-cream md:text-2xl">{item.label}</h3>
                     <p className="mt-1 text-[11px] text-cream-dim">{item.sub}</p>
@@ -265,9 +259,6 @@ function RisultatiPreview() {
                     className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full bg-ink/50 px-2 py-0.5 backdrop-blur-sm">
-                    <p className="num-mono text-[10px] tracking-[0.3em] text-gold">CASO · 0{i + 6}</p>
-                  </div>
                   <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                     <h3 className="display text-lg text-cream md:text-2xl">{item.label}</h3>
                     <p className="mt-1 text-[11px] text-cream-dim">{item.sub}</p>
